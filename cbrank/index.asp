@@ -324,7 +324,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
             Dim query = "SELECT * FROM departments"
             rsDeps.Open query, conn	
-            Do While not rsGuestbook.EOF 
+            Do While not rsDeps.EOF 
 
                 'Write the HTML to display the current record in the recordset 
                 Response.Write ("<br>") 
@@ -334,7 +334,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Response.Write ("<br>") 
 
                 'Move to the next record in the recordset 
-                rsGuestbook.MoveNext 
+                rsDeps.MoveNext 
             Loop
 
             %>
