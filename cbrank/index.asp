@@ -322,8 +322,7 @@ Set conn = Server.CreateObject("ADODB.Connection")
 conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
         
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
-            Dim query = "SELECT * FROM departments"
-            rsDeps.Open query, conn	
+            rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
 
                 'Write the HTML to display the current record in the recordset 
