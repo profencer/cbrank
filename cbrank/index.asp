@@ -476,6 +476,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
         <div class="pure-control-group">
             <label for="e">Сотрудник</label>
             <select id="e">
+                <% For Each e In emps %>
+                    <option><% e.Item("fname") %></option>
+                <% Next %>
                 <option>Фамилия И.И., подразделение, должность</option>
                 <option>Фамилия И.И., подразделение, должность</option>
                 <option>Фамилия И.И., подразделение, должность</option>
