@@ -317,13 +317,11 @@ form div{
                      <%
 
                      Dim Connection
-Set Connection = Server.CreateObject("ADODB.Connection")
+Set conn = Server.CreateObject("ADODB.Connection")
 Response.Write("object created...")
 conn.Open "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\cb\master\db.mdb;Persist Security Info=False;" 
 Response.Write("connected...")
-            set conn=Server.CreateObject("ADODB.Connection")
-            conn.Provider="Microsoft.Jet.OLEDB.4.0"
-            conn.Open "./db.mdb"
+        
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
             var query = "SELECT * FROM departments"
             rsDeps.Open query, conn	
