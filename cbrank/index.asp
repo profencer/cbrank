@@ -340,7 +340,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Dim posts
             Set posts=Server.CreateObject("Scripting.Dictionary")
             Set rsPosts = Server.CreateObject("ADODB.Recordset")
-            rsDeps.Open "SELECT * FROM posts", conn	
+            rsPosts.Open "SELECT * FROM posts", conn	
             Do While not rsPosts.EOF 
                 Response.write 2
                 posts.Add rsPosts("id"),rsPosts("desc") 
