@@ -316,29 +316,63 @@ form div{
                  <img height="50px" src="http://media.lpgenerator.ru/images/310017/cbr.png">
                  <div class="title">
                      <% @ codepage=65001 %>
-<% Response.Charset= "utf-8"%>
+                    <% Response.Charset= "utf-8"%>
                      <%
 
                      Dim Connection
 Set conn = Server.CreateObject("ADODB.Connection")
 
 conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
-        
+            Dim deps
+            Set deps=Server.CreateObject("Scripting.Dictionary")
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
             rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
-
                 'Write the HTML to display the current record in the recordset 
-                Response.Write ("<br>") 
-                Response.Write (rsDeps("id")) 
-                Response.Write ("<br>") 
-                Response.Write (rsDeps("desc")) 
-                Response.Write ("<br>") 
-
-                'Move to the next record in the recordset 
+                deps.Add rsDeps("id"),rsDeps("desc") 
                 rsDeps.MoveNext 
             Loop
 
+            Dim posts
+            Set posts=Server.CreateObject("Scripting.Dictionary")
+            Set rsPosts = Server.CreateObject("ADODB.Recordset")
+            rsDeps.Open "SELECT * FROM posts", conn	
+            Do While not rsPosts.EOF 
+                posts.Add rsPosts("id"),rsPosts("desc") 
+                rsDeps.MoveNext 
+            Loop
+
+            Dim emps
+            Set emps=Server.CreateObject("Scripting.Dictionary")
+            Set rsEmps = Server.CreateObject("ADODB.Recordset")
+            rsEmps.Open "SELECT * FROM employees", conn	
+            Do While not rsEmps.EOF 
+                posts.Add rsEmps("id"),rsEmps("desc") 
+                rsEmps.MoveNext 
+            Loop
+
+            Dim emps
+            Set emps=Server.CreateObject("Scripting.Dictionary")
+            Set rsEmps = Server.CreateObject("ADODB.Recordset")
+            rsEmps.Open "SELECT * FROM employees", conn	
+            Do While not rsEmps.EOF 
+                posts.Add rsEmps("id"),rsEmps("desc") 
+                rsEmps.MoveNext 
+            Loop
+
+            Dim grates
+            Set grates=Server.CreateObject("Scripting.Dictionary")
+            Set rsGrates = Server.CreateObject("ADODB.Recordset")
+            rsGrates.Open "SELECT * FROM grates", conn	
+            Do While not rsGrates.EOF 
+                Dim grate
+                Set grate=Server.CreateObject("Scripting.Dictionary")
+                grate.Add "emp", rsGrates("employee")
+                grate.Add "date", rsGrates("date")
+                grate.Add "value", rsGrates("value")
+                grate.Add "desc", rsGrates("desc")
+                grates.Add rsGrates("id"),grate 
+                rsGrates.MoveNext
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
