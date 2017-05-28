@@ -314,10 +314,7 @@ form div{
              <div class="topnav" id="myTopnav">
                  <img height="50px" src="http://media.lpgenerator.ru/images/310017/cbr.png">
                  <div class="title">
-                    Раскрываем ценности Банка России каждый день!
-                 </div>
-            </div> 
-            <%
+                     <%
             set conn=Server.CreateObject("ADODB.Connection")
             conn.Provider="Microsoft.Jet.OLEDB.4.0"
             conn.Open "./db.mdb"
@@ -338,6 +335,10 @@ form div{
             Loop
 
             %>
+                    Раскрываем ценности Банка России каждый день!
+                 </div>
+            </div> 
+            
             <table>
                 <tr>
                     <td></td>
