@@ -469,7 +469,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp.Add rsEmps("id"),emp  
                 rsEmps.MoveNext 
             Loop
-            print_r(emps,"[pre:dictionary]")
+            print_r emps,"[pre:dictionary]"
             rsEmps.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
