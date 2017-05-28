@@ -329,8 +329,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
                 'Write the HTML to display the current record in the recordset 
-                if !deps.Item("id")
-                deps.Add rsDeps("id"),rsDeps("desc") 
+                if Not deps.Item("id")
+                    deps.Add rsDeps("id"),rsDeps("desc") 
                 rsDeps.MoveNext 
             Loop
 
