@@ -319,7 +319,7 @@ form div{
                      Dim Connection
 Set conn = Server.CreateObject("ADODB.Connection")
 
-conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("master/cbrank/db.mdb")
+conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
         
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
             var query = "SELECT * FROM departments"
