@@ -469,7 +469,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 if Not emps.Exists(rsEmps("id")) Then
                     emps.Add rsEmps("id"),emp  
                 end if
-                response.write(emp.Item("fname")
+                response.write(emp.Item("fname"))
                 rsEmps.MoveNext 
             Loop
             
