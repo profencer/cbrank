@@ -317,6 +317,45 @@ form div{
                     Проявляем ценности Банка России!
                  </div>
             </div> 
+            <%
+             var dbaseConnection = Server.CreateObject("ADODB.Connection");
+
+
+              var connectionString = "DRIVER=SQLite3 ODBC Driver; Database= path to test.db; LongNames=0; Timeout=1000; NoTXN=0; SyncPragma=NORMAL; StepAPI=0;";
+              dbaseConnection.Open(connectionString);
+
+              
+              var query = "SELECT * FROM 'departments'";
+              var recordSet = dbaseConnection.Execute(query);
+              while (!recordSet.Eof) {
+                Set Department= Server.CreateObject("Scripting.Dictionary")
+              }
+
+             
+              var query = "SELECT * FROM 'posts'";
+              var recordSet = dbaseConnection.Execute(query);
+              while (!recordSet.Eof) {
+                Set Post= Server.CreateObject("Scripting.Dictionary")
+              }
+
+              Set Employees= Server.CreateObject("Scripting.Dictionary")
+              var query = "SELECT * FROM 'employees'";
+              var recordSet = dbaseConnection.Execute(query);
+              while (!recordSet.Eof) {
+              
+              }
+              var query = "SELECT * FROM 'grates'";
+              var recordSet = dbaseConnection.Execute(query);
+
+
+              while (!recordSet.Eof) {
+                 Response.write("<tr><td>" + recordSet("name") + '</td><td>' + recordSet("surname") + "</td></tr>");
+                 recordSet.moveNext();
+              }
+
+              recordSet.Close();
+              dbaseConnection.Close();
+              %>
             <table>
                 <tr>
                     <td></td>
