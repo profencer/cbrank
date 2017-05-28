@@ -469,6 +469,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 if Not emps.Exists(rsEmps("id")) Then
                     emps.Add rsEmps("id"),emp  
                 end if
+                response.write(emp.Item("fname")
                 rsEmps.MoveNext 
             Loop
             
@@ -586,7 +587,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
         <div class="pure-control-group">
             <label for="e">Сотрудник</label>
             <select id="e">
-                <% response.write 343434 
+                <% 
                 For Each e In emps %>
                     <option><%=e.Item("fname") %></option>
                 <% Next %>
