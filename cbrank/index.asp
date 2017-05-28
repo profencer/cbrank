@@ -329,7 +329,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
                 'Write the HTML to display the current record in the recordset 
-                Response.write rsDeps("desc")
+                Response.write 1
                 if Not deps.Item("id") Then
                     deps.Add rsDeps("id"),rsDeps("desc") 
                 end if
@@ -341,6 +341,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsPosts = Server.CreateObject("ADODB.Recordset")
             rsDeps.Open "SELECT * FROM posts", conn	
             Do While not rsPosts.EOF 
+                Response.write 2
                 posts.Add rsPosts("id"),rsPosts("desc") 
                 rsDeps.MoveNext 
             Loop
@@ -351,6 +352,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsEmps = Server.CreateObject("ADODB.Recordset")
             rsEmps.Open "SELECT * FROM employees", conn	
             Do While not rsEmps.EOF 
+                Response.write 3
                 Dim emp
                 Set emp=Server.CreateObject("Scripting.Dictionary")
                 emp.Add "fname", rsGrates("fullname")
@@ -365,7 +367,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set grates=Server.CreateObject("Scripting.Dictionary")
             Set rsGrates = Server.CreateObject("ADODB.Recordset")
             rsGrates.Open "SELECT * FROM grates", conn	
-            Do While not rsGrates.EOF 
+            Do While not rsGrates.EOF
+                Response.write 4
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
                 grate.Add "emp", rsGrates("employee")
