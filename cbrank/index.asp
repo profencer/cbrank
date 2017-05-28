@@ -172,7 +172,7 @@ table {
                 overflow: hidden;
                 z-index:100;
                 width:100%;
-                height:300px;
+                height:50px;
                 
             }
             .topnav img{
@@ -477,12 +477,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             <label for="e">Сотрудник</label>
             <select id="e">
                 <% For Each e In emps %>
-                    <option><% e.Item("fname") %></option>
+                    <option><%=e.Item("fname") %></option>
                 <% Next %>
-                <option>Фамилия И.И., подразделение, должность</option>
-                <option>Фамилия И.И., подразделение, должность</option>
-                <option>Фамилия И.И., подразделение, должность</option>
-            </select>
+                            </select>
         </div>
         <div class="pure-control-group">
             <label for="d">Дата</label>
