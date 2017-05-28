@@ -363,6 +363,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp.Add rsEmps("id"),emp  
                 rsEmps.MoveNext 
             Loop
+            For Each e In emps
+                response.write e.Item("fname")
+            Next
             rsEmps.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
@@ -381,6 +384,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
+            
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
