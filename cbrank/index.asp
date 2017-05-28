@@ -318,18 +318,35 @@ form div{
                  </div>
             </div> 
             <%
-             var dbaseConnection = Server.CreateObject("ADODB.Connection");
+            Set IIsWebVirtualDirObj = GetObject("IIS://localhost/W3SVC/1/Root") 
 
 
-              var connectionString = "DRIVER=SQLite3 ODBC Driver; Database= path to test.db; LongNames=0; Timeout=1000; NoTXN=0; SyncPragma=NORMAL; StepAPI=0;";
-              dbaseConnection.Open(connectionString);
+            ' There are multiple ways to set a property: 
+            'IIsWebVirtualDirObj.AppAllowDebugging = True 
+            IIsWebVirtualDirObj.Put "AppAllowDebugging", True 
+            IIsWebVirtualDirObj.SetInfo 
+            var dbaseConnection = Server.CreateObject("ADODB.Connection");
 
+
+            var connectionString = "DRIVER=SQLite3 ODBC Driver; Database= path to test.db; LongNames=0; Timeout=1000; NoTXN=0; SyncPragma=NORMAL; StepAPI=0;";
+            dbaseConnection.Open(connectionString);
+            set conn=Server.CreateObject("ADODB.Connection")
+            conn.Provider="Microsoft.Jet.OLEDB.4.0"
+            conn.Open "c:/webdata/northwind.mdb"
               
-              var query = "SELECT * FROM 'departments'";
-              var recordSet = dbaseConnection.Execute(query);
-              while (!recordSet.Eof) {
-                Set Department= Server.CreateObject("Scripting.Dictionary")
-              }
+            var query = "SELECT * FROM 'departments'";
+            var recordSet = dbaseConnection.Execute(query);
+              
+            set rs=Server.CreateObject("ADODB.recordset")
+            rs.Open "Select * from Customers", conn
+
+            for each x in rs.fields
+            response.write(x.name)
+            response.write(" = ")
+            response.write(x.value)
+            next
+            Set Department= Server.CreateObject("Scripting.Dictionary")
+              
 
              
               var query = "SELECT * FROM 'posts'";
