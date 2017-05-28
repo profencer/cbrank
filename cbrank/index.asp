@@ -469,10 +469,12 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 if Not emps.Exists(rsEmps("id")) Then
                     emps.Add rsEmps("id"),emp  
                 end if
-                response.write(emp.Item("fname"))
+                
                 rsEmps.MoveNext 
             Loop
-            
+            For Each e In emps 
+                response.write(e.Item("fname"))
+            Next
             rsEmps.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
