@@ -593,7 +593,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             <select id="e">
                 <% 
                 For Each e In emps %>
-                    <option><%=e.Item("fname") %></option>
+                    <option><%=emps.Item(e).Item("fname") %></option>
                 <% Next %>
                             </select>
         </div>
