@@ -448,7 +448,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsPosts = Server.CreateObject("ADODB.Recordset")
             rsPosts.Open "SELECT * FROM posts", conn	
             Do While not rsPosts.EOF 
-                Response.write 2
+                
                 posts.Add rsPosts("id"),rsPosts("desc") 
                 rsPosts.MoveNext 
             Loop
@@ -459,7 +459,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsEmps = Server.CreateObject("ADODB.Recordset")
             rsEmps.Open "SELECT * FROM employees", conn	
             Do While not rsEmps.EOF 
-                Response.write 3
+                
                 Dim emp
                 Set emp=Server.CreateObject("Scripting.Dictionary")
                 dim fname
@@ -484,7 +484,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsGrates = Server.CreateObject("ADODB.Recordset")
             rsGrates.Open "SELECT * FROM grates", conn	
             Do While not rsGrates.EOF
-                Response.write 4
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
                 grate.Add "emp", rsGrates("employee")
