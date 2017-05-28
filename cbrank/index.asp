@@ -342,21 +342,19 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsDeps.MoveNext 
             Loop
 
-            Dim emps
-            Set emps=Server.CreateObject("Scripting.Dictionary")
-            Set rsEmps = Server.CreateObject("ADODB.Recordset")
-            rsEmps.Open "SELECT * FROM employees", conn	
-            Do While not rsEmps.EOF 
-                posts.Add rsEmps("id"),rsEmps("desc") 
-                rsEmps.MoveNext 
-            Loop
 
             Dim emps
             Set emps=Server.CreateObject("Scripting.Dictionary")
             Set rsEmps = Server.CreateObject("ADODB.Recordset")
             rsEmps.Open "SELECT * FROM employees", conn	
             Do While not rsEmps.EOF 
-                posts.Add rsEmps("id"),rsEmps("desc") 
+                Dim emp
+                Set emp=Server.CreateObject("Scripting.Dictionary")
+                emp.Add "fname", rsGrates("fullname")
+                emp.Add "date", rsGrates("post")
+                emp.Add "department", rsGrates("department")
+                emp.Add "pic", rsGrates("pic")
+                emp.Add rsEmps("id"),emp  
                 rsEmps.MoveNext 
             Loop
 
