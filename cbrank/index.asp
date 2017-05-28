@@ -314,15 +314,29 @@ form div{
              <div class="topnav" id="myTopnav">
                  <img height="50px" src="http://media.lpgenerator.ru/images/310017/cbr.png">
                  <div class="title">
-                    Проявляем ценности Банка России!
+                    Раскрываем ценности Банка России каждый день!
                  </div>
             </div> 
             <%
             set conn=Server.CreateObject("ADODB.Connection")
             conn.Provider="Microsoft.Jet.OLEDB.4.0"
             conn.Open "./db.mdb"
+            Set rsDeps = Server.CreateObject("ADODB.Recordset")
             var query = "SELECT * FROM departments"
-            var recordSet = adoCon.Execute(query)            
+            rsDeps.Open query, conn	
+            Do While not rsGuestbook.EOF 
+
+                'Write the HTML to display the current record in the recordset 
+                Response.Write ("<br>") 
+                Response.Write (rsDeps("id")) 
+                Response.Write ("<br>") 
+                Response.Write (rsDeps("desc")) 
+                Response.Write ("<br>") 
+
+                'Move to the next record in the recordset 
+                rsGuestbook.MoveNext 
+            Loop
+
             %>
             <table>
                 <tr>
