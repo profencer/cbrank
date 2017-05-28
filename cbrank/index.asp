@@ -462,12 +462,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Response.write 3
                 Dim emp
                 Set emp=Server.CreateObject("Scripting.Dictionary")
-                response.write(rsEmps("fullname"))
                 emp.Add "fname", rsEmps("fullname")
                 emp.Add "date", rsEmps("post")
                 emp.Add "department", rsEmps("department")
                 emp.Add "pic", rsEmps("pic")
-                emp.Add rsEmps("id"),emp  
+                emps.Add rsEmps("id"),emp  
                 rsEmps.MoveNext 
             Loop
             dim x
