@@ -318,14 +318,12 @@ form div{
                  </div>
             </div> 
             <%
-            
             set conn=Server.CreateObject("ADODB.Connection");
             conn.Provider="Microsoft.Jet.OLEDB.4.0";
             conn.Open "./db.mdb";
             var query = "SELECT * FROM departments";
-            var recordSet = adoCon.Execute(query);
-              
-              %>
+            var recordSet = adoCon.Execute(query);             
+            %>
             <table>
                 <tr>
                     <td></td>
