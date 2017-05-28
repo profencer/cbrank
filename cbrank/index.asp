@@ -468,12 +468,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp.Add "pic", rsEmps("pic")
                 if Not emps.Exists(rsEmps("id")) Then
                     emps.Add rsEmps("id"),emp  
-                end if
                 rsEmps.MoveNext 
             Loop
-            dim x
-            x = print_r(emps,"[pre:]dictionary")
-            response.write(x)
+            
             rsEmps.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
