@@ -172,7 +172,7 @@ table {
                 overflow: hidden;
                 z-index:100;
                 width:100%;
-                height:50px;
+                height:300px;
                 
             }
             .topnav img{
@@ -180,7 +180,7 @@ table {
             }
             .title{
                 position:absolute;
-                padding-left:300px;
+                padding-left:50px;
                 width:100%;
                 text-align:center;
                 padding:15px;
@@ -329,7 +329,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
                 'Write the HTML to display the current record in the recordset 
-                Response.write rsDeps("id"),rsDeps("desc") 
+                Response.write rsDeps("id")
                 if Not deps.Item("id") Then
                     deps.Add rsDeps("id"),rsDeps("desc") 
                 end if
