@@ -322,8 +322,8 @@ form div{
 
             Set adoCon = Server.CreateObject("ADODB.Connection")
 
-            adoCon.Open "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" & Server.MapPath("guestbook.mdb")  
-            var query = "SELECT * FROM 'departments'";
+            adoCon.Open "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" & Server.MapPath("guestbook.mdb") ;
+            var query = "SELECT * FROM departments";
             var recordSet = adoCon.Execute(query);
               
               %>
