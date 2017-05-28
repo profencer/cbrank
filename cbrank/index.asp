@@ -334,6 +334,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 end if
                 rsDeps.MoveNext 
             Loop
+            rsDeps.close()
+            conn.close()
 
             Dim posts
             Set posts=Server.CreateObject("Scripting.Dictionary")
@@ -342,9 +344,10 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Do While not rsPosts.EOF 
                 Response.write 2
                 posts.Add rsPosts("id"),rsPosts("desc") 
-                rsDeps.MoveNext 
+                rsPosts.MoveNext 
             Loop
-
+            rsPosts.close()
+            conn.close()
 
             Dim emps
             Set emps=Server.CreateObject("Scripting.Dictionary")
@@ -361,7 +364,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp.Add rsEmps("id"),emp  
                 rsEmps.MoveNext 
             Loop
-
+            rsEmps.close()
+            conn.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
             Set rsGrates = Server.CreateObject("ADODB.Recordset")
@@ -377,6 +381,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 grates.Add rsGrates("id"),grate 
                 rsGrates.MoveNext
             Loop
+            rsGrates.close()
+            conn.close()
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
