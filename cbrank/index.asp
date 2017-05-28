@@ -75,7 +75,7 @@ table {
                 height:100%;
                 width:100%;
                 border-collapse: collapse;
-                border:2px solid black;
+                border:2px solid #333;
                 overflow:hidden;
             }
             td{
@@ -83,9 +83,9 @@ table {
                 height:20%;
                 padding:0px;
                 margin:0px;
-                border:2px solid black;
+                border:2px solid #333;
                 background:black;
-                opacity:0.985;
+                opacity:0.785;
                 overflow:hidden;
                 vertical-align:top;
                 
