@@ -335,7 +335,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsDeps.MoveNext 
             Loop
             rsDeps.close()
-            conn.close()
+            
 
             Dim posts
             Set posts=Server.CreateObject("Scripting.Dictionary")
