@@ -315,6 +315,12 @@ form div{
                  <img height="50px" src="http://media.lpgenerator.ru/images/310017/cbr.png">
                  <div class="title">
                      <%
+
+                     Dim Connection
+Set Connection = Server.CreateObject("ADODB.Connection")
+Response.Write("object created...")
+conn.Open "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" & Server.MapPath("C://cb//master//cbrankdb.mdb") & ";" 
+Response.Write("connected...")
             set conn=Server.CreateObject("ADODB.Connection")
             conn.Provider="Microsoft.Jet.OLEDB.4.0"
             conn.Open "./db.mdb"
