@@ -322,7 +322,7 @@ Set conn = Server.CreateObject("ADODB.Connection")
 conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
         
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
-            Set query = "SELECT * FROM departments"
+            Dim query = "SELECT * FROM departments"
             rsDeps.Open query, conn	
             Do While not rsGuestbook.EOF 
 
