@@ -331,6 +331,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 'Write the HTML to display the current record in the recordset 
                 if Not deps.Item("id") Then
                     deps.Add rsDeps("id"),rsDeps("desc") 
+                end if
                 rsDeps.MoveNext 
             Loop
 
