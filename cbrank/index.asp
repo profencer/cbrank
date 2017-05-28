@@ -347,7 +347,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsPosts.MoveNext 
             Loop
             rsPosts.close()
-            conn.close()
 
             Dim emps
             Set emps=Server.CreateObject("Scripting.Dictionary")
@@ -365,7 +364,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsEmps.MoveNext 
             Loop
             rsEmps.close()
-            conn.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
             Set rsGrates = Server.CreateObject("ADODB.Recordset")
