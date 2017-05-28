@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
        <!--css reset--> <style>
            
 
@@ -314,6 +315,8 @@ form div{
              <div class="topnav" id="myTopnav">
                  <img height="50px" src="http://media.lpgenerator.ru/images/310017/cbr.png">
                  <div class="title">
+                     <% @ codepage=65001 %>
+<% Response.Charset= "utf-8"%>
                      <%
 
                      Dim Connection
