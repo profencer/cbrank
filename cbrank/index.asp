@@ -473,7 +473,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsEmps.MoveNext 
             Loop
             For Each e In emps 
-                response.write(e.Item("fname"))
+                response.write(emps(e).Item("fname"))
             Next
             rsEmps.close()
             Dim grates
