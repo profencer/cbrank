@@ -502,18 +502,21 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set grates=Server.CreateObject("Scripting.Dictionary")
             Set rsGrates = Server.CreateObject("ADODB.Recordset")
             rsGrates.Open "SELECT * FROM grates", conn	
+            Dim date
+            Dim val
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
                 set emp = rsGrates("employee")
                 grate.Add "emp", emp
+
                 set date = rsGrates("date")
                 grate.Add "date", date
-                set val = rsGrates("value")
+                val = rsGrates("value")
                 grate.Add "value", val 
-                set desc = rsGrates("desc")
+                desc = rsGrates("desc")
                 grate.Add "desc", desc 
-                set id = rsGrates("id")
+                id = rsGrates("id")
                 grates.Add id ,grate 
                 rsGrates.MoveNext
             Loop
