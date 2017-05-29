@@ -499,20 +499,15 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
-                dim emp
-                emp = rsGrates("employee")
+                set emp = rsGrates("employee")
                 grate.Add "emp", emp
-                dim date
-                date = rsGrates("date")
+                set date = rsGrates("date")
                 grate.Add "date", date
-                dim val
-                val = rsGrates("value")
-                grate.Add "value", val
-                dim desc 
-                desc = rsGrates("desc")
-                grate.Add "desc", desc
-                dim id 
-                id = rsGrates("id")
+                set val = rsGrates("value")
+                grate.Add "value", val 
+                set desc = rsGrates("desc")
+                grate.Add "desc", desc 
+                set id = rsGrates("id")
                 grates.Add id ,grate 
                 rsGrates.MoveNext
             Loop
