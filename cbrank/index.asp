@@ -649,25 +649,28 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             </div>
         </div>
         <%
+        dim cc
+        cc = 1
         For Each e In grates 
                 response.write(grates(e).Item("employee"))
-            Next%>
-        <div id="jsModal<%=i%>" class="modal">
+            t%>
+        <div id="jsModal<%=cc%>" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
                 <div class="avatar">
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
-                <p style="font-size:12px; font-weight:bold;" id="fio"><%=grates.Items(i)%></p>
-                <p style="font-size:12px; font-weight:bold;" id="date">Должность, подразделение</p>
-                <p><b>Служение обществу</b></p>
-                <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio magna, scelerisque id purus eget, mollis ullamcorper ex. Mauris bibendum elit arcu, sed ultrices ante rhoncus vel. Nulla facilisi. Suspendisse fringilla enim et magna maximus aliquet. Duis ut enim eget velit tristique commodo. Pellentesque tristique ullamcorper ullamcorper. Suspendisse sit amet urna risus. Vestibulum ut facilisis risus, in placerat nisl. Etiam sed nisl id ipsum convallis faucibus. Praesent venenatis nunc nec dapibus consectetur
-                    
+                <p style="font-size:12px; font-weight:bold;" id="fio"><%=grates(e).Item("employee")%></p>
+                <p style="font-size:12px; font-weight:bold;" id="date"><%=grates(e).Item("post")%></p>
+                <p><b><%=grates(e).Item("value")%></b></p>
+                <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
                 <button class="modal__close jsModalClose">&#10005;</button>
             </div>
         </div>
-         <% %>
+         <%
+         cc = cc + 1 
+         Next %>
         <div id="jsModalForm" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
