@@ -473,9 +473,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 
                 set fname = rsEmps("fullname")
                 emp.Add "fname", fname
-                
-                set date = rsEmps("date")
-                emp.Add "date", date
                 set dep = rsEmps("department")
                 emp.Add "department", dep
                 
