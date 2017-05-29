@@ -553,7 +553,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             if num<=GrateCount AND num > 0 Then 
                         %>
                             <td class="opened">
-                                <div class="grate jsModalTrigger" href="#jsModal">
+                                <div class="grate jsModalTrigger" href="#jsModal<%=num%>">
                                     <div class="thumbsup">
                                     <img width="100%"  class="icon icons8-Thumb-Up" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABiklEQVRoge2YO27CQBRFWQJLyAaQ2EN2QUXEAkKTtHl0WUGaQEOBUSSKsAIrrceyKbAiKOxUKROh0CHdFEwkTPB/PhjNkV5/j+f5Wp5Gw2AwGC4euNQHI4BRCDa41Z2nMGD0zQX241JXd6bcwKN2LDw/Cd25cnOwPrHRnSs3YOTXVgAeXZ0KXx8Bh+zaCiTtPh9fd75U4FI3JTzgkK07YyIJtRkfl/q6c56Eh//KFPCorTvrP3jjZIc/x/WBR0049JEZvtiEcAcP5VM9PSLPwKMmGL0LDn94YiRXIOFLK/IkZAvInqjeAgpWSNqTLx9eg8DPyw024w424w62sx529t2nmhYSKLCd9bB7u7+YFfob00Kmhco++dq0kPgG0iAgtoEUC6RMhfuj8xCIhAi0piM8Bz4mqwDXr5Y6AVErNFwuMA/XmIdrTFaBCoGKDZQiYAkWkNNARwKt6QjD5QKWhBWS00BHAppe4oo32PkFZP1SRmoE9j/14iUqr1BB+HWiCBEBDWQwGAyq+AXaWUD/bOYqiQAAAABJRU5ErkJggg==">
                                     </div>
@@ -565,7 +565,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             <td><%=num%> "" <%=GrateCount%></td>
                         <%
                             end if  
-                            if num=GrateCount+1 Then
+                            if num=GrateCount1 Then
                         %>
                         <td> <div class="pulse-container jsModalTrigger" href="#jsModalForm">
                             <div class="base-pulse pulse1"></div>
@@ -649,13 +649,14 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             <p id="date">01/01/1960</p>
             </div>
         </div>
-        <div id="jsModal" class="modal">
+        <% For i = 0 to grates.Items.Count %>
+        <div id="jsModal<%=i%>" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
                 <div class="avatar">
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
-                <p style="font-size:12px; font-weight:bold;" id="fio">Фамилия Имя</p>
+                <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps(grates.Items(i).Item("emp")).Item("fname")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность, подразделение</p>
                 <p><b>Служение обществу</b></p>
                 <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio magna, scelerisque id purus eget, mollis ullamcorper ex. Mauris bibendum elit arcu, sed ultrices ante rhoncus vel. Nulla facilisi. Suspendisse fringilla enim et magna maximus aliquet. Duis ut enim eget velit tristique commodo. Pellentesque tristique ullamcorper ullamcorper. Suspendisse sit amet urna risus. Vestibulum ut facilisis risus, in placerat nisl. Etiam sed nisl id ipsum convallis faucibus. Praesent venenatis nunc nec dapibus consectetur
@@ -664,6 +665,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <button class="modal__close jsModalClose">&#10005;</button>
             </div>
         </div>
+         <% Next %>
         <div id="jsModalForm" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
