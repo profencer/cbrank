@@ -527,7 +527,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             conn.close()
             dim a
             dim s
-            Set a = posts.Keys
+            
             for each e in posts
                 s = s & e & "<br>"
             next
