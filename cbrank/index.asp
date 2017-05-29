@@ -528,8 +528,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             dim a
             dim s
             Set a = posts.Keys
-            for i = 0 To a.Count - 1
-                s = s & a(i) & "<br>"
+            for each e in posts
+                s = s & e & "<br>"
             next
             Response.Write(s)
             %>
