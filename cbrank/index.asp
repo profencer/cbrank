@@ -567,7 +567,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             </td>
                         <%
                             end if
-                            if num>GrateCount+1 OR num < 0
+                            if num>GrateCount+1 OR num < 0 Then
                         %>
                             <td><%=num%> "" <%=GrateCount%></td>
                         <%
