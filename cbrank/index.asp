@@ -504,6 +504,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsGrates.Open "SELECT * FROM grates", conn	
             Dim date
             Dim val
+            Dim GrateCount As Integer = 0
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
@@ -518,6 +519,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 grate.Add "desc", desc 
                 id = rsGrates("id")
                 grates.Add id ,grate 
+                GrateCount = count + 1
                 rsGrates.MoveNext
             Loop
             rsGrates.close()
@@ -529,6 +531,25 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             </div> 
             
             <table>
+                <%
+                    Dim rows = 5
+                    Dim cols = 5
+                    For i = 0 to rows
+                %>
+                    <tr>
+                <%
+                        For j = 0 to cells
+                %>
+                    <td></td>
+                <%
+                        Next
+                        
+                %>
+                    </tr>
+                <%
+                    Next
+                %>
+                <!--
                 <tr>
                     <td></td>
                     <td></td>
@@ -581,6 +602,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                         
                     </td>
                 </tr>
+                -->
             </table>
         </div>
         <div class="dummy">
