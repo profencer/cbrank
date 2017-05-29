@@ -550,7 +550,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             dim r
                             r = grates.Items
 
-                            if r(num - 1) Then 
+                            if num<GrateCount AND num > 0 Then 
                         %>
                             <td class="opened">
                                 <div class="grate jsModalTrigger" href="#jsModal">
