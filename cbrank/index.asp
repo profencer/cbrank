@@ -455,7 +455,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsPosts.Open "SELECT * FROM posts", conn	
             Do While not rsPosts.EOF 
                 
-                Set desc = rsPosts("desc")
+                desc = rsPosts("desc").Value
                 
                 id = rsPosts("id").Value
                 posts.Add id ,desc 
