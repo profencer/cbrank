@@ -562,7 +562,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                         <%
                             else
                         %>
-                            <td></td>
+                            <td><%=num%></td>
                         <%
                             end if  
                         %>
