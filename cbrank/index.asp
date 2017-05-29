@@ -525,7 +525,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            response.write(print_r(grates,"[pre:]dictionary"))
             For Each e In grates 
                 'response.write(emps.Item(e))
             Next
