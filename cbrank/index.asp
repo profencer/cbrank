@@ -486,7 +486,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 
                 pic = rsEmps.Fields.Item("pic")
                 emp.Add "pic", pic 
-                response.write(rsEmps("id"))
+                
                 
                 id = rsEmps.Fields.Item("id")
                 'if Not emps.Exists(id) Then
@@ -495,7 +495,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 rsEmps.MoveNext 
             Loop
             For Each e In emps 
-                response.write(emps.Item(e).Item("fname"))
+                'response.write(emps.Item(e).Item("fname"))
             Next
             rsEmps.close()
             Dim grates
@@ -525,8 +525,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            For i = 0 to grates.Items.Count-1
-                response.write(grates.Items(i))
+            
+            For Each e In grates 
+                response.write(emps.Item(e).Item("emp"))
             Next
             %>
                     Раскрываем ценности Банка России каждый день!
