@@ -466,23 +466,28 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set emps=Server.CreateObject("Scripting.Dictionary")
             Set rsEmps = Server.CreateObject("ADODB.Recordset")
             rsEmps.Open "SELECT * FROM employees", conn	
+            Dim emp
+            dim fname 
+            dim dep
+            dim pic
+            dim id
             Do While not rsEmps.EOF 
                 
-                Dim emp
+                
                 Set emp=Server.CreateObject("Scripting.Dictionary")
                 
-                dim fname 
+                
                 fname = rsEmps.Fields.Item("fullname")
                 emp.Add "fname", fname
-                dim dep
+                
                 dep = rsEmps.Fields.Item("department")
                 emp.Add "department", dep
                 
-                dim pic
+                
                 pic = rsEmps.Fields.Item("pic")
                 emp.Add "pic", pic 
                 response.write(rsEmps("id"))
-                dim id
+                
                 id = rsEmps.Fields.Item("id")
                 'if Not emps.Exists(id) Then
                     emps.Add id,emp  
