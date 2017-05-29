@@ -529,7 +529,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             dim s
             
             for each e in posts
-                Response.Write(e)
+                Response.Write(posts(e))
             next
             
             %>
