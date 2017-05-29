@@ -533,11 +533,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             
             <table>
                 <%
-                    Dim rows as Integer
+                    Dim rows
                     rows = 10
-                    Dim cols as Integer
+                    Dim cols
                     cols = 10
-                    dim num as Integer
+                    dim num
                     num = 0
                     For i = 1 to rows
                 %>
