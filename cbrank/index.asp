@@ -434,12 +434,13 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
             rsDeps.Open "SELECT * FROM departments", conn	
             Do While not rsDeps.EOF 
-                'Write the HTML to display the current record in the recordset 
-                if Not deps.Exists(rsDeps("id")) Then
+                'Write the HTML to display the current record in the recordset
+                dim id 
+                id = rsDeps("id") 
+                if Not deps.Exists(id) Then
                     dim desc
                     desc = rsDeps("desc")
-                    dim id 
-                    id = rsDeps("id")
+                    
                     deps.Add id, desc
                 end if
                 rsDeps.MoveNext 
