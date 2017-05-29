@@ -541,7 +541,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 %>
                     <tr>
                 <%
-                        For j = 0 to cells
+                        For j = 0 to cols
                 %>
                     <td></td>
                 <%
