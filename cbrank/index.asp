@@ -525,7 +525,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            
+            For i = 0 to grates.Items.Count-1
+                response.write(grates.Items(i))
+            Next
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
@@ -651,7 +653,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
         </div>
         <%
         Dim d
-        set d = grates.Items 
+        d = grates.Items 
         dim count 
         count = d.Count - 1
         For i = 0 to count%>
