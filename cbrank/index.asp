@@ -509,7 +509,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
-                set emp = rsGrates("employee")
+                emp = rsGrates("employee").Value
                 grate.Add "emp", emp
 
                 set date = rsGrates("date")
@@ -667,7 +667,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=grates(e).Item("employee")%></p>
-                <p style="font-size:12px; font-weight:bold;" id="date"><%=posts.Item(1)%><%=posts.Item((grates(e).Item("post")))%></p>
+                <p style="font-size:12px; font-weight:bold;" id="date"><%=posts.Item((grates(e).Item("post")))%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
