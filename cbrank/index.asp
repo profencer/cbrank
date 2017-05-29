@@ -504,7 +504,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             rsGrates.Open "SELECT * FROM grates", conn	
             Dim date
             Dim val
-            Dim GrateCount As Integer = 0
+            Dim GrateCount 
+            GrateCount = 0
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
