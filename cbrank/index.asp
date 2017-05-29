@@ -80,8 +80,8 @@ table {
                 overflow:hidden;
             }
             td{
-                width:20%;
-                height:20%;
+                width:10%;
+                height:10%;
                 padding:0px;
                 margin:0px;
                 border:2px solid #333;
@@ -534,9 +534,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             <table>
                 <%
                     Dim rows
-                    rows = 5
+                    rows = 10
                     Dim cols 
-                    cols = 5
+                    cols = 10
                     For i = 0 to rows
                 %>
                     <tr>
