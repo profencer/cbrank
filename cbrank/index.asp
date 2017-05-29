@@ -216,11 +216,12 @@ table {
             }
             .thumbsup{
                 position:absolute;
-                width:100%;
-                padding:2px;
+                width:50%;
+                
                 background-color:#f1c40f;
                 border-radius:100px;
-                
+                left:50%;
+                margin-left:-25%                
                 
             }
 
