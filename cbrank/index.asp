@@ -525,7 +525,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            a=posts.Keys
+            dim a
+            a = posts.Keys
             for i = 0 To d.Count -1
                 s = s & a(i) & "<br>"
             next
