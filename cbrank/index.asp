@@ -537,13 +537,20 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                     rows = 10
                     Dim cols 
                     cols = 10
+                    dim num = 0
                     For i = 0 to rows
                 %>
                     <tr>
                 <%
                         For j = 0 to cols
                 %>
-                    <td></td>
+                    <td>
+                        <%
+                            num = GrateCount - j- (rows - i)
+                            response.write(num)
+                        %>
+
+                    </td>
                 <%
                         Next
                         
