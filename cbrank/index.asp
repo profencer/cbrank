@@ -547,12 +547,22 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                         <%
                             dim num
                             num = GrateCount - (rows - i)*cols + j - 1
-                            response.write("num = " + Cstr(num))
-                            response.write("i = " + Cstr(i))
-                            response.write("j = " + Cstr(j))
-                            response.write("gc = " + Cstr(GrateCount))
+                            if grates.Items()[num-1] Then 
                         %>
-
+                            <td class="opened">
+                                <div class="grate jsModalTrigger" href="#jsModal">
+                                    <div class="thumbsup">
+                                    <img width="100%"  class="icon icons8-Thumb-Up" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABiklEQVRoge2YO27CQBRFWQJLyAaQ2EN2QUXEAkKTtHl0WUGaQEOBUSSKsAIrrceyKbAiKOxUKROh0CHdFEwkTPB/PhjNkV5/j+f5Wp5Gw2AwGC4euNQHI4BRCDa41Z2nMGD0zQX241JXd6bcwKN2LDw/Cd25cnOwPrHRnSs3YOTXVgAeXZ0KXx8Bh+zaCiTtPh9fd75U4FI3JTzgkK07YyIJtRkfl/q6c56Eh//KFPCorTvrP3jjZIc/x/WBR0049JEZvtiEcAcP5VM9PSLPwKMmGL0LDn94YiRXIOFLK/IkZAvInqjeAgpWSNqTLx9eg8DPyw024w424w62sx529t2nmhYSKLCd9bB7u7+YFfob00Kmhco++dq0kPgG0iAgtoEUC6RMhfuj8xCIhAi0piM8Bz4mqwDXr5Y6AVErNFwuMA/XmIdrTFaBCoGKDZQiYAkWkNNARwKt6QjD5QKWhBWS00BHAppe4oo32PkFZP1SRmoE9j/14iUqr1BB+HWiCBEBDWQwGAyq+AXaWUD/bOYqiQAAAABJRU5ErkJggg==">
+                                    </div>
+                                </div>
+                            </td>
+                        <%
+                            else
+                        %>
+                            <td></td>
+                        <%
+                            end if  
+                        %>
                     </td>
                 <%
                         Next
