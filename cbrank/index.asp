@@ -652,8 +652,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
         dim cc
         cc = 1
         For Each e In grates 
-                response.write(grates(e).Item("employee"))
-            t%>
+        %>
         <div id="jsModal<%=cc%>" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
