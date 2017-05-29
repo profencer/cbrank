@@ -525,9 +525,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            For Each e In grates 
-                response.write(grates(e).Item("employee"))
-            Next
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
@@ -652,11 +649,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             </div>
         </div>
         <%
-        Dim d
-        d = grates.Items 
-        dim count 
-        count = d.Count - 1
-        For i = 0 to count%>
+        For Each e In grates 
+                response.write(grates(e).Item("employee"))
+            Next%>
         <div id="jsModal<%=i%>" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
@@ -672,7 +667,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <button class="modal__close jsModalClose">&#10005;</button>
             </div>
         </div>
-         <% Next %>
+         <% %>
         <div id="jsModalForm" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
