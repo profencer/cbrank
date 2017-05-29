@@ -457,7 +457,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 
                 Set desc = rsPosts("desc")
                 
-                Set id = rsPosts.Item("id").Value
+                Set id = rsPosts("id").Value
                 posts.Add id ,desc 
                 rsPosts.MoveNext 
             Loop
