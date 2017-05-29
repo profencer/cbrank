@@ -527,7 +527,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             conn.close()
             dim a
             dim s
-            set a = posts.Keys
+            Set a = posts.Keys
             for i = 0 To a.Count - 1
                 s = s & a(i) & "<br>"
             next
