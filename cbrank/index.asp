@@ -471,15 +471,19 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Dim emp
                 Set emp=Server.CreateObject("Scripting.Dictionary")
                 
-                dim fname = rsEmps.Fields.Item("fullname")
+                dim fname 
+                fname = rsEmps.Fields.Item("fullname")
                 emp.Add "fname", fname
-                dim dep = rsEmps.Fields.Item("department")
+                dim dep
+                dep = rsEmps.Fields.Item("department")
                 emp.Add "department", dep
                 
-                dim pic = rsEmps.Fields.Item("pic")
+                dim pic
+                pic = rsEmps.Fields.Item("pic")
                 emp.Add "pic", pic 
                 response.write(rsEmps("id"))
-                dim id = rsEmps.Fields.Item("id")
+                dim id
+                id = rsEmps.Fields.Item("id")
                 'if Not emps.Exists(id) Then
                     emps.Add id,emp  
                 'end if
