@@ -432,10 +432,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Dim deps
             Set deps=Server.CreateObject("Scripting.Dictionary")
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
-            rsDeps.Open "SELECT * FROM departments", conn	
+            rsDeps.Open "SELECT * FROM departments", conn
+            dim id 	
             Do While not rsDeps.EOF 
                 'Write the HTML to display the current record in the recordset
-                dim id 
+                
                 id = rsDeps("id") 
                 if Not deps.Exists(id) Then
                     dim desc
@@ -470,7 +471,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             dim fname 
             dim dep
             dim pic
-            dim id
             Do While not rsEmps.EOF 
                 
                 
