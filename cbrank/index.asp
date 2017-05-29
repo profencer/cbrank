@@ -543,7 +543,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <%
                         For j = 1 to cols
                 %>
-                    <td>
+                    
                         <%
                             dim num
                             num = GrateCount - (rows - i)*cols + j - 1
@@ -566,7 +566,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                         <%
                             end if  
                         %>
-                    </td>
+                    
                 <%
                         Next
                         
