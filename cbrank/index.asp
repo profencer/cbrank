@@ -479,8 +479,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 set pic = rsEmps("pic")
                 emp.Add "pic", pic 
                 response.write(rsEmps("id"))
-                'if Not emps.Exists(rsEmps("id")) Then
-                    set id = rsEmps("id")
+                set id = rsEmps("id")
+                'if Not emps.Exists(id) Then
                     emps.Add id,emp  
                 'end if
                 rsEmps.MoveNext 
