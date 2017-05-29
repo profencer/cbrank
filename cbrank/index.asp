@@ -436,7 +436,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Do While not rsDeps.EOF 
                 'Write the HTML to display the current record in the recordset 
                 if Not deps.Exists(rsDeps("id")) Then
-                    deps.Add rsDeps("id"),rsDeps("desc") 
+                    dim desc
+                    desc = rsDeps("desc")
+                    dim id 
+                    id = rsDeps("id")
+                    deps.Add id, desc
                 end if
                 rsDeps.MoveNext 
             Loop
@@ -448,8 +452,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Set rsPosts = Server.CreateObject("ADODB.Recordset")
             rsPosts.Open "SELECT * FROM posts", conn	
             Do While not rsPosts.EOF 
-                
-                posts.Add rsPosts("id"),rsPosts("desc") 
+                dim desc
+                desc = rsPosts("desc")
+                dim id
+                id = rsPosts("id")
+                posts.Add id ,desc 
                 rsPosts.MoveNext 
             Loop
             rsPosts.close()
@@ -465,14 +472,20 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 dim fname
                 fname = rsEmps("fullname")
                 emp.Add "fname", fname
-                emp.Add "date", rsEmps("post")
-                emp.Add "department", rsEmps("department")
-                emp.Add "pic", rsEmps("pic")
+                dim date
+                date = rsEmps("date")
+                emp.Add "date", date
+                dim dep = rsEmps("department")
+                emp.Add "department", dep
+                dim pic
+                pic = rsEmps("pic")
+                emp.Add "pic", pic 
                 response.write(rsEmps("id"))
                 'if Not emps.Exists(rsEmps("id")) Then
-                    emps.Add rsEmps("id"),emp  
+                    dim id
+                    id = rsEmps("id")
+                    emps.Add id,emp  
                 'end if
-                
                 rsEmps.MoveNext 
             Loop
             For Each e In emps 
@@ -486,11 +499,21 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Do While not rsGrates.EOF
                 Dim grate
                 Set grate=Server.CreateObject("Scripting.Dictionary")
-                grate.Add "emp", rsGrates("employee")
-                grate.Add "date", rsGrates("date")
-                grate.Add "value", rsGrates("value")
-                grate.Add "desc", rsGrates("desc")
-                grates.Add rsGrates("id"),grate 
+                dim emp
+                emp = rsGrates("employee")
+                grate.Add "emp", emp
+                dim date
+                date = rsGrates("date")
+                grate.Add "date", date
+                dim val
+                val = rsGrates("value")
+                grate.Add "value", val
+                dim desc 
+                desc = rsGrates("desc")
+                grate.Add "desc", desc
+                dim id 
+                id = rsGrates("id")
+                grates.Add id ,grate 
                 rsGrates.MoveNext
             Loop
             rsGrates.close()
