@@ -566,12 +566,13 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                                 </div>
                             </td>
                         <%
-                            else
+                            end if
+                            if num>GrateCount+1 OR num <>> 0
                         %>
                             <td><%=num%> "" <%=GrateCount%></td>
                         <%
                             end if  
-                            if num=GrateCount1 Then
+                            if num=GrateCount + 1  Then
                         %>
                         <td> <div class="pulse-container jsModalTrigger" href="#jsModalForm">
                             <div class="base-pulse pulse1"></div>
