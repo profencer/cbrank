@@ -537,8 +537,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                     rows = 10
                     Dim cols
                     cols = 10
-                    dim num
-                    num = 0
                     For i = 1 to rows
                 %>
                     <tr>
@@ -547,6 +545,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 %>
                     <td>
                         <%
+                            dim num
                             num = GrateCount - (rows - i)*cells + j - 1
                             response.write("num = " + Cstr(10-15))
                             response.write("i = " + Cstr(i))
