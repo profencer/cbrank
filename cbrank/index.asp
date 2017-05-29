@@ -525,7 +525,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            response.write(posts.Item(1))%>
+            response.write(posts.Item("1"))%>
                     Раскрываем ценности Банка России каждый день!
                  </div>
             </div> 
