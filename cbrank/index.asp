@@ -656,7 +656,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <div class="avatar">
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
-                <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps(grates.Items(i).Item("emp")).Item("fname")%></p>
+                <p style="font-size:12px; font-weight:bold;" id="fio"><%=grates.Items(i).Item("emp")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность, подразделение</p>
                 <p><b>Служение обществу</b></p>
                 <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio magna, scelerisque id purus eget, mollis ullamcorper ex. Mauris bibendum elit arcu, sed ultrices ante rhoncus vel. Nulla facilisi. Suspendisse fringilla enim et magna maximus aliquet. Duis ut enim eget velit tristique commodo. Pellentesque tristique ullamcorper ullamcorper. Suspendisse sit amet urna risus. Vestibulum ut facilisis risus, in placerat nisl. Etiam sed nisl id ipsum convallis faucibus. Praesent venenatis nunc nec dapibus consectetur
