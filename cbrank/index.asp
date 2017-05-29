@@ -470,21 +470,20 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 
                 Dim emp
                 Set emp=Server.CreateObject("Scripting.Dictionary")
-                dim fname
-                fname = rsEmps("fullname")
+                
+                set fname = rsEmps("fullname")
                 emp.Add "fname", fname
-                dim date
-                date = rsEmps("date")
+                
+                set date = rsEmps("date")
                 emp.Add "date", date
-                dim dep = rsEmps("department")
+                set dep = rsEmps("department")
                 emp.Add "department", dep
-                dim pic
-                pic = rsEmps("pic")
+                
+                set pic = rsEmps("pic")
                 emp.Add "pic", pic 
                 response.write(rsEmps("id"))
                 'if Not emps.Exists(rsEmps("id")) Then
-                    dim id
-                    id = rsEmps("id")
+                    set id = rsEmps("id")
                     emps.Add id,emp  
                 'end if
                 rsEmps.MoveNext 
