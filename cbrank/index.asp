@@ -525,9 +525,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             Loop
             rsGrates.close()
             conn.close()
-            
+            response.write(print_r(grates,"pre"))
             For Each e In grates 
-                response.write(emps.Item(e))
+                'response.write(emps.Item(e))
             Next
             %>
                     Раскрываем ценности Банка России каждый день!
