@@ -652,7 +652,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
         <%
         Dim d
         d = grates.Items 
-        For i = 0 to d.Count - 1 %>
+        dim count 
+        count = d.Count - 1
+        For i = 0 to count%>
         <div id="jsModal<%=i%>" class="modal">
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
