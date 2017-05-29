@@ -660,7 +660,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=grates(e).Item("employee")%></p>
-                <p style="font-size:12px; font-weight:bold;" id="date"><%=posts(grates(e).Item("post"))%></p>
+                <p style="font-size:12px; font-weight:bold;" id="date"><%=posts.Item((grates(e).Item("post")))%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
