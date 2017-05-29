@@ -548,7 +548,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                     <td>
                         <%
                             num = GrateCount - (rows - i)*cells + j - 1
-                            response.write("num = " + Cstr(num))
+                            response.write("num = " + Cstr((rows - i)*cells))
                             response.write("i = " + Cstr(i))
                             response.write("j = " + Cstr(j))
                             response.write("gc = " + Cstr(GrateCount))
