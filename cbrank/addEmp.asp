@@ -82,7 +82,7 @@ rsDeps.close()
     response.write(Uploader.Form("d"))
     response.write(Uploader.Form("p"))
     response.write(File.FileName)
-    %><%@ codepage=65001 %><%
+    response.CodePage = 65001
     Set rs = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
