@@ -62,7 +62,7 @@ end if
 <HTML><HEAD>
   <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <TITLE>ASP huge file upload - base upload.</TITLE>
+ <TITLE>Добавить сотрудника - шаг 2.</TITLE>
  <meta name="robots" content="noindex,nofollow">
 </HEAD>
 <BODY BGColor=white>

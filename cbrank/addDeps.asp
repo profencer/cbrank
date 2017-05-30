@@ -59,7 +59,7 @@ end if
 <HTML><HEAD>
   <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
- <TITLE>ASP huge file upload - base upload.</TITLE>
+ <TITLE>Добавить должность</TITLE>
  <meta name="robots" content="noindex,nofollow">
 </HEAD>
 <BODY BGColor=white>
@@ -72,12 +72,12 @@ end if
 
 
 
-<h3>Добавить должность%></h3>
+<h3>Добавить должность</h3>
     <form method="post">
       <fieldset>
          <div class="pure-control-group">
-                <label for="fio">Yfpdfybt</label>
-                <textarea name="fio" id="fio" /></textarea>
+                <label for="fio">Название</label>
+                <textarea name="desc" id="fio" /></textarea>
         </div>
         
         <input type="submit" value="Отправить">
