@@ -522,7 +522,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 grate.Add "value", val 
                 desc = rsGrates("desc")
                 grate.Add "desc", desc 
-                id = rsGrates("id")
+                id = rsGrates("id").Value
                 grates.Add id ,grate 
                 GrateCount = GrateCount + 1
                 rsGrates.MoveNext
