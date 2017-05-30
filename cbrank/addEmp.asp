@@ -102,6 +102,10 @@ end if
                     <% Next %>
                 </select>
         </div>
+         <div class="pure-control-group">
+                <label for="file">Фотография</label>
+                <input name="file" id="file" type="file"/>
+        </div>
         <input type="submit" value="Отправить">
       </fieldset>
     </form>
