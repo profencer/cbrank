@@ -1,5 +1,5 @@
-
-<%Option Explicit CODEPAGE="65001"%>
+<%@CODEPAGE="65001"%>
+<%Option Explicit%>
 <% Response.Charset= "utf-8"%>
 <!--#INCLUDE FILE="clsUpload.asp"-->
 <%
