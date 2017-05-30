@@ -85,6 +85,7 @@ end if
                 <label for="e">Подразделение</label>
                 <select name="e" id="e">
                     <% 
+                    Dim d
                     For Each d In deps %>
                         <option value="<%=d%>"><%=emps.Item(d) %></option>
                     <% Next %>
@@ -94,6 +95,7 @@ end if
                 <label for="e">Должность</label>
                 <select name="e" id="e">
                     <% 
+                    Dim p
                     For Each p In posts %>
                         <option value="<%=p%>"><%=posts.Item(p) %></option>
                     <% Next %>
