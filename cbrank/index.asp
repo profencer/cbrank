@@ -672,7 +672,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                             <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
-                <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=emps.Item(grates(e).Item("emp")).Item("post")%> <%
+                <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=posts.Item(emps.Item(grates(e).Item("emp")).Item("post")).Item("desc")%> <%
                 Dim empid
                 empid = grates(e).Item("emp")
                 console.write(empid)
