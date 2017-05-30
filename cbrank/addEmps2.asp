@@ -39,8 +39,8 @@ Do While not rsDeps.EOF
   rsDeps.MoveNext 
 Loop
 rsDeps.close()
-
-Set = Server.CreateObject("ADODB.Recordset")
+if request.Form("fio") <> "" Then
+    Set rs= Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
     sql=sql & " VALUES "
@@ -55,7 +55,7 @@ Set = Server.CreateObject("ADODB.Recordset")
     else
       Response.Write("<h3> Пользователь создан!</h3> ")
     end if
-
+end if
 %>  
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD>
