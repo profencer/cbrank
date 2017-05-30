@@ -35,60 +35,60 @@ Session.CodePage=65001
   <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <TITLE>ASP huge file upload - base upload.</TITLE>
- <STYLE TYPE="text/css"><!--TD	{font-family:Arial,Helvetica,sans-serif }TH	{font-family:Arial,Helvetica,sans-serif }TABLE	{font-size:10pt;font-family:Arial,Helvetica,sans-serif }--></STYLE>
  <meta name="robots" content="noindex,nofollow">
 </HEAD>
 <BODY BGColor=white>
 
 
 <Div style=width:600>
-<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-  
-  <TR>
-    <TH noWrap align=left width="20%" bgColor=khaki>&nbsp;<A 
-      href="http://asp-upload.borec.net">Power ASP 
-      file upload</A> - base upload.&nbsp;</TH>
-    <TD>&nbsp;</TD></TR></TABLE>
-<TABLE cellSpacing=2 cellPadding=1 width="100%" bgColor=white border=0>
-  
-  <TR>
-    <TD colSpan=2>
-      <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This sample demonstrates shortes possible server-side code.
-			ASP code specifies only Form.SizeLimit (maximum size of upload), Server.ScriptTimeout (maximum time to do upload) and DestinationPath (folder to store uploaded files).
-
-<br>ЗАГРЗААА <%=Server.ScriptTimeout%>s
-<br>Form size limit is <%=Form.SizeLimit \ 1024 %>kB
-<br>Destination folder is <%=DestinationPath%>
-
-
-			</P>
-  </TD></TR></TABLE>
-
-
-
-
-
-<form method="POST" ENCTYPE="multipart/form-data">
-
-   File 1 : <input type="file" name="File1"><br>
-   File 2 : <input type="file" name="File2"><br>
-   File 3 : <input type="file" name="File3">
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input Name=SubmitButton Value="Upload files &gt;&gt;" Type=submit><br>
-
-</Form>
 
 
 
 
 
 
-<HR COLOR=silver Size=1>
-<CENTER>
-<FONT SIZE=1>� 1996 � <%=year(date)%> Antonin Foller, <a href="http://www.motobit.com">Motobit Software</a>, e-mail <A href="mailto:help@pstruh.cz" >help@pstruh.cz</A>
-<br>To monitor current running uploads/downloads, see <A Href="http://www.motobit.com/help/iistrace/iis-monitor.asp">IISTracer - IIS real-time monitor</A>.
-</FONT>
+<h3>Добавить сотрудника</h3>
+    <form action="addEmp.asp" enctype="multipart/form-data" method="POST">
+      <fieldset>
+        <div class="pure-control-group">
+                <label for="fio">Фио</label>
+                <input name="fio" id="fio" type="text"/>
+        </div>
+        <div class="pure-control-group">
+                <label for="d">Подразделение</label>
+                <select name="d" id="d">
+                    <% 
+                    Dim d
+                    For Each d In deps %>
+                        <option value="<%=d%>"><%=deps(d) %></option>
+                    <% Next %>
+                </select>
+        </div>
+        <div class="pure-control-group">
+                <label for="p">Должность</label>
+                <select name="p" id="p">
+                    <% 
+                    Dim p
+                    For Each p In posts %>
+                        <option value="<%=p%>"><%=posts(p) %></option>
+                    <% Next %>
+                </select>
+        </div>
+         <div class="pure-control-group">
+                <label for="file">Фотография</label>
+                <input name="file" id="file" type="file"/>
+        </div>
+        <input type="submit" value="Отправить">
+      </fieldset>
+    </form>
 
-</CENTER>
+
+
+
+
+
+
+
+
 </Div>
 </BODY></HTML>
