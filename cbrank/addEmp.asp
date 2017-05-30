@@ -21,7 +21,7 @@ conn.Execute sql,recaffected
 if err<>0 then
   Response.Write(err.Description)
 else
-  Response.Write("<h3>" Запись добавлена!</h3> <a href='index.asp'>Назад</a>")
+  Response.Write("<h3>" !</h3> Entry added <a href='index.asp'>Back</a>")
 end if
 
 Dim posts
