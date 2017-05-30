@@ -1,5 +1,5 @@
 <%
-Dim Connection
+Dim Connection,xs
 Set conn = Server.CreateObject("ADODB.Connection")
 'добавить пользователей приложения в писателей и изменятелей файла бд
 conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.mdb")
