@@ -70,7 +70,7 @@ Loop
 rsDeps.close()
 
 
-response.write(request.form("fio"))
+
   Dim Uploader, File
   Set Uploader = New FileUploader
 
