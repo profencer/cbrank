@@ -79,7 +79,7 @@ conn.close
     </head>
   <body>
     <h3>Добавить сотрудника</h3>
-    <form action="addEmp.asp" method="POST">
+    <form action="addEmp.asp" enctype="multipart/form-data" method="POST">
       <fieldset>
         <div class="pure-control-group">
                 <label for="fio">Фио</label>
