@@ -64,7 +64,7 @@ Do While not rsDeps.EOF
 Loop
 rsDeps.close()
 
-conn.close
+
 
   Dim Uploader, File
   Set Uploader = New FileUploader
@@ -89,13 +89,13 @@ conn.close
     sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
     sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
     sql=sql & "'" & Encode_UTF8(File.FileName)& "')"
-    'on error resume next
-    'conn.Execute sql,recaffected
-    'if err<>0 then
-    '  Response.Write(err.Description)
-    'else
-    '  Response.Write("<h3> Пользователь создан!</h3> ")
-    'end if
+    on error resume next
+    conn.Execute sql,recaffected
+    if err<>0 then
+      Response.Write(err.Description)
+    else
+      Response.Write("<h3> Пользователь создан!</h3> ")
+    end if
     File.SaveToDisk "C:\cb\cbrank\cbrank\"
     Response.Write "Загружен файл: " & File.FileName & "<br>"
 
