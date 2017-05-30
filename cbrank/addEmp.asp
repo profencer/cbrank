@@ -1,4 +1,4 @@
-<%@ Language=VBScript 'CODEPAGE="65001"%>
+<%@ Language=VBScript %>
 <%Option Explicit%>
 <% 'Response.Charset= "utf-8"%>
 <!-- #include file="upload.asp" -->
