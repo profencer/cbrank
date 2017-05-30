@@ -8,7 +8,7 @@ sql="INSERT INTO grates ([employee],[date],"
 sql=sql & "[value],[desc])"
 sql=sql & " VALUES "
 sql=sql & "('" & CInt(Request.QueryString("e")) & "',"
-sql=sql & "'" & Request.QueryString("d") & "',"
+sql=sql & "'" & CDate(Request.QueryString("d")) & "',"
 sql=sql & "'" & CInt(Request.QueryString("v")) & "',"
 sql=sql & "'" & Request.QueryString("cb") & "')"
 'добавить сендера 
