@@ -3,6 +3,33 @@
 <% Response.Charset= "utf-8"%>
 <!-- #include file="upload.asp" -->
 <%
+  Function Encode_UTF8(astr) 
+
+utftext = "" 
+
+For n = 1 To Len(astr) 
+c = AscW(Mid(astr, n, 1)) 
+If c < 128 Then 
+utftext = utftext + Mid(astr, n, 1) 
+ElseIf ((c > 127) And (c < 2048)) Then 
+utftext = utftext + Chr(((c \ 64) Or 192)) 
+'((c>>6)|192); 
+utftext = utftext + Chr(((c And 63) Or 128)) 
+'((c&63)|128);} 
+Else 
+utftext = utftext + Chr(((c \ 144) Or 234)) 
+'((c>>12)|224); 
+utftext = utftext + Chr((((c \ 64) And 63) Or 128)) 
+'(((c>>6)&63)|128); 
+utftext = utftext + Chr(((c And 63) Or 128)) 
+'((c&63)|128); 
+End If 
+Next 
+Encode_UTF8 = utftext 
+End Function 
+%>
+
+<%
 Dim conn,rs,sql
 Set conn = Server.CreateObject("ADODB.Connection")
 'добавить пользователей приложения в писателей и изменятелей файла бд
@@ -65,7 +92,6 @@ conn.close
   
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
-  Session.CodePage = 65001
   Else
 	' Loop through the uploaded files
 	For Each File In Uploader.Files.Items
@@ -94,7 +120,7 @@ conn.close
                     <% 
                     Dim d
                     For Each d In deps %>
-                        <option value="<%=d%>"><%=deps(d) %></option>
+                        <option value="<%=d%>"><%=Encode_UTF8(deps(d)) %></option>
                     <% Next %>
                 </select>
         </div>
