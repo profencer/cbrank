@@ -56,21 +56,26 @@ Loop
 rsDeps.close()
 
 conn.close
-
+on error resume next
   Dim Uploader, File
   Set Uploader = New FileUploader
 
   ' This starts the upload process
   Uploader.Upload()
   If Uploader.Files.Count = 0 Then
-	Response.Write "File(s) not uploaded."
+	  Response.Write "File(s) not uploaded."
   Else
-	' Loop through the uploaded files
-	For Each File In Uploader.Files.Items
-    File.SaveToDisk "C:\cb\cbrank\cbrank\"
-  Next
-	Response.Write "File Uploaded: " & File.FileName & "<br>"
+	  ' Loop through the uploaded files
+	  For Each File In Uploader.Files.Items
+      File.SaveToDisk "C:\cb\cbrank\cbrank\"
+    Next
+	  Response.Write "File Uploaded: " & File.FileName & "<br>"
   end if
+if err<>0 then
+  Response.Write(err.Description)
+else
+  Response.Write("<h3>" Запись добавлена!</h3> <a href='index.asp'>Назад</a>")
+end if
 %>
 <html>
     <head>
