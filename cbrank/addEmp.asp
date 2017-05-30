@@ -37,7 +37,7 @@ Do While not rsPosts.EOF
 Loop
 rsPosts.close()
 
-Dim deps,xs
+Dim deps,xs,rsDeps
 Set deps=Server.CreateObject("Scripting.Dictionary")
 Set rsDeps = Server.CreateObject("ADODB.Recordset")
 rsDeps.Open "SELECT * FROM departments", conn
