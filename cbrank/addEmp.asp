@@ -57,7 +57,6 @@ rsDeps.close()
 
 conn.close
 
-if request.Form("fio") <> "" Then
   Dim Uploader, File
   Set Uploader = New FileUploader
 
@@ -72,7 +71,6 @@ if request.Form("fio") <> "" Then
   Next
 	Response.Write "File Uploaded: " & File.FileName & "<br>"
   end if
-end if
 %>
 <html>
     <head>
