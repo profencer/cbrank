@@ -91,7 +91,7 @@ rsDeps.close()
     sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
     sql=sql & "'" & Encode_UTF8(File.FileName)& "')"
     'on error resume next
-    conn.Execute sql,recaffected
+    conn.Execute sql
     'if err<>0 then
     '  Response.Write(err.Description)
     'else
