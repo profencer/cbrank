@@ -515,8 +515,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Set grate=Server.CreateObject("Scripting.Dictionary")
                 emp = rsGrates("employee").Value
                 grate.Add "emp", emp
-
-                set date = rsGrates("date").Value
+                If Not IsNull() Then
+                    set date = rsGrates("date").Value
+                end if
                 grate.Add "date", date
                 val = rsGrates("value").Value
                 grate.Add "value", val 
