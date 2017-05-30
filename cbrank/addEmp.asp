@@ -62,6 +62,7 @@ conn.close
 
   ' This starts the upload process
   Uploader.Upload()
+  Session.CodePage = 65001
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
   Else
