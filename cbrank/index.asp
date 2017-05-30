@@ -673,7 +673,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность: <%
-                Dim postid
                 Dim empid
                 empid = grates(e).Item("emp")
                 postid = emps.Item(empid).Item("post")
