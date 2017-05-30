@@ -16,6 +16,16 @@ sql=sql & "'" & Request.QueryString("cb") & "')"
 
 on error resume next
 conn.Execute sql,recaffected
+%>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+  <body>
+
+<%
 if err<>0 then
   Response.Write(err.Description)
 else
@@ -23,3 +33,5 @@ else
 end if
 conn.close
 %>
+</body>
+</html>
