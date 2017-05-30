@@ -4,7 +4,7 @@ Set conn = Server.CreateObject("ADODB.Connection")
 
 conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
 Set rs = Server.CreateObject("ADODB.Recordset")
-sql="INSERT INTO grates (employee,date,"
+sql="INSERT INTO TABLE grates (employee,date,"
 sql=sql & "value,desc)"
 sql=sql & " VALUES "
 sql=sql & "('" & Request.QueryString("e") & "',"
