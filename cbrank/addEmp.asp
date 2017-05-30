@@ -65,6 +65,7 @@ conn.close
   
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
+  Session.CodePage = 65001
   Else
 	' Loop through the uploaded files
 	For Each File In Uploader.Files.Items
@@ -72,7 +73,7 @@ conn.close
   Next
 	Response.Write "File Uploaded: " & File.FileName & "<br>"
   end if
-  Session.CodePage = 65001
+  
 %>
 <html>
     <head>
