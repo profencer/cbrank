@@ -524,8 +524,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 desc = rsGrates("desc").Value
                 grate.Add "desc", desc 
                 id = rsGrates("id").Value
-                console.write(id)
-                console.write(" ")
+                response.write(id)
+                response.write(" ")
                 grates.Add id ,grate 
                 GrateCount = GrateCount + 1
                 rsGrates.MoveNext
