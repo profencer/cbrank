@@ -32,6 +32,7 @@ End Function
 <%
 Dim conn,rs,sql
 Set conn = Server.CreateObject("ADODB.Connection")
+conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.mdb")
 
 
 Dim posts
