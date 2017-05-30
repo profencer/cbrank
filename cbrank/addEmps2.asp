@@ -1,3 +1,4 @@
+<%@CODEPAGE=65001%>
 <%
 
 Option Explicit
