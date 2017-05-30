@@ -130,7 +130,7 @@ conn.close
                     <% 
                     Dim p
                     For Each p In posts %>
-                        <option value="<%=p%>"><%=posts(p) %></option>
+                        <option value="<%=p%>"><%=Encode_UTF8(posts(p)) %></option>
                     <% Next %>
                 </select>
         </div>
