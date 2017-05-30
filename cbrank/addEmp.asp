@@ -26,7 +26,11 @@ utftext = utftext + Chr(((c And 63) Or 128))
 End If 
 Next 
 Encode_UTF8 = utftext 
-End Function 
+End Function
+
+
+
+ 
 %>
 
 <%
@@ -66,7 +70,7 @@ Loop
 rsDeps.close()
 
 
-
+response.write(request.form("fio"))
   Dim Uploader, File
   Set Uploader = New FileUploader
 
