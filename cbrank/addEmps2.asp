@@ -39,6 +39,7 @@ Do While not rsDeps.EOF
   rsDeps.MoveNext 
 Loop
 rsDeps.close()
+dim res
 if request.Form("fio") <> "" Then
     Set rs= Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
@@ -54,7 +55,7 @@ if request.Form("fio") <> "" Then
       Response.Write(err.Description)
     else
       Session("path") = ""
-      Response.Write("<h3> Пользователь создан!</h3> ")
+      res = "<h3> Пользователь создан!</h3>
     end if
 end if
 %>  
@@ -74,7 +75,7 @@ end if
 
 
 
-
+<h3><%=res%></h3>
 <h3>Добавить сотрудника c фото <%=Session("path")%></h3>
     <form method="post">
       <fieldset>
