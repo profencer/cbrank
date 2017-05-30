@@ -672,7 +672,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
                 <div class="avatar">
-                            <img   class="icon icons8-Thumb-Up" src="/UploadFolder/<%=emps.Item(grates(e).Item("emp")).Item("pic")%>">
+                            <img   class="icon icons8-Thumb-Up" src="UploadFolder/<%=emps.Item(grates(e).Item("emp")).Item("pic")%>">
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=posts.Item(CInt(emps.Item(grates(e).Item("emp")).Item("post")))%> <%%></p>
