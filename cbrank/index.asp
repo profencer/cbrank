@@ -556,7 +556,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
                     
                         <%
                             dim num
-                            num = GrateCount - (rows - i-1)*cols + j + cols - GrateCount mod cols
+                            num = GrateCount - (rows - i+1)*cols + j + cols - GrateCount mod cols
                             dim r
                             r = grates.Items
 
