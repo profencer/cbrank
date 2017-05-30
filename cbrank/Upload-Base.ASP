@@ -1,4 +1,5 @@
-<%@CODEPAGE=65001
+<%
+
 Option Explicit
 'Stores only files with size less than MaxFileSize
 
@@ -27,7 +28,7 @@ ElseIf Form.State > 10 then
   end Select
 End If'Form.State = 0 then
 
-
+Session.CodePage=65001
 %>  
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML><HEAD>
