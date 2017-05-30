@@ -39,7 +39,7 @@ Do While not rsDeps.EOF
   rsDeps.MoveNext 
 Loop
 rsDeps.close()
-Dim rs,sql
+Dim sql
 Set = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
