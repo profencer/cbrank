@@ -94,7 +94,7 @@ conn.close
 	' Loop through the uploaded files
 	For Each File In Uploader.Files.Items
     response.write(Uploader.Form("fio"))
-    аSet rs = Server.CreateObject("ADODB.Recordset")
+    Set rs = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
     sql=sql & " VALUES "
