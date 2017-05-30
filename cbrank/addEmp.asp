@@ -42,8 +42,6 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
 'sql=sql & "'" & CDate(Request.QueryString("d")) & "',"
 'sql=sql & "'" & CInt(Request.QueryString("v")) & "',"
 'sql=sql & "'" & Request.QueryString("cb") & "')"
-'добавить сендера 
-
 'on error resume next
 'conn.Execute sql,recaffected
 'if err<>0 then
@@ -96,6 +94,21 @@ conn.close
 	' Loop through the uploaded files
 	For Each File In Uploader.Files.Items
     response.write(Uploader.Form("fio"))
+    аSet rs = Server.CreateObject("ADODB.Recordset")
+    sql="INSERT INTO employees ([fullname],[department],"
+    sql=sql & "[post],[pic])"
+    sql=sql & " VALUES "
+    sql=sql & "('" & Encode_UTF8(Uploader.Form("fio")) & "',"
+    sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
+    sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
+    sql=sql & "'" & Encode_UTF8(File.FileName )& "')"
+    on error resume next
+    conn.Execute sql,recaffected
+    if err<>0 then
+      Response.Write(err.Description)
+    else
+      Response.Write("<h3> Пользователь создан!</h3> ")
+    end if
     File.SaveToDisk "C:\cb\cbrank\cbrank\"
     Response.Write "Загружен файл: " & File.FileName & "<br>"
 
@@ -118,8 +131,8 @@ conn.close
                 <input name="fio" id="fio" type="text"/>
         </div>
         <div class="pure-control-group">
-                <label for="e">Подразделение</label>
-                <select name="e" id="e">
+                <label for="d">Подразделение</label>
+                <select name="d" id="d">
                     <% 
                     Dim d
                     For Each d In deps %>
@@ -128,8 +141,8 @@ conn.close
                 </select>
         </div>
         <div class="pure-control-group">
-                <label for="e">Должность</label>
-                <select name="e" id="e">
+                <label for="p">Должность</label>
+                <select name="p" id="p">
                     <% 
                     Dim p
                     For Each p In posts %>
