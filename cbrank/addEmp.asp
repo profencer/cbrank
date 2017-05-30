@@ -25,7 +25,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
 'end if
 
 Dim posts
-Dim postid
+Dim postid,rsPosts
 Set posts = Server.CreateObject("Scripting.Dictionary")
 Set rsPosts = Server.CreateObject("ADODB.Recordset")
 rsPosts.Open "SELECT * FROM posts", conn	
