@@ -92,7 +92,7 @@ rsDeps.close()
       <fieldset>
         <div class="pure-control-group">
                 <label for="fio">Фио</label>
-                <input name="fio" id="fio" type="text"/>
+                <textarea name="fio" id="fio" /></textarea>
         </div>
         <div class="pure-control-group">
                 <label for="d">Подразделение</label>
