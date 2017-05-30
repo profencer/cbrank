@@ -21,8 +21,8 @@ If Form.State = 0 Then 'Completted
 	Form.Files.Save DestinationPath 
   response.write(Form("fio"))
 	response.write "<br><Font Color=green>Files (" & Form.TotalBytes \1024 & "kB) was saved to " & DestinationPath & " folder.</Font>"
-  Session("path") = DestinationPath
-  response.write "<br><a href='addEmps2.asp'>Заполнить данные сотрудника</a>"
+  Session("path") = Form.Files(0).FileName
+  response.redirect "addEmps2.asp"
   
 ElseIf Form.State > 10 then
   Const fsSizeLimit = &HD
