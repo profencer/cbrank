@@ -674,7 +674,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность: <%
                 Dim postid
                 postid = emps.Item(grates(e).Item("emp")).Item("post")
-                console.write(posts.Item().Item("desc"))%></p>
+                console.write(postid)
+                console.write(posts.Item(postid).Item("desc"))%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
