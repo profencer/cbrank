@@ -21,6 +21,7 @@ If Form.State = 0 Then 'Completted
 	Form.Files.Save DestinationPath 
   response.write(Form("fio"))
 	response.write "<br><Font Color=green>Files (" & Form.TotalBytes \1024 & "kB) was saved to " & DestinationPath & " folder.</Font>"
+  Dim File
   For Each File In Form.Files.Items
    Session("path") = File.Filename
   Next
