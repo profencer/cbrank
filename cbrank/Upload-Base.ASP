@@ -88,7 +88,7 @@ rsDeps.close()
 
 
 <h3>Добавить сотрудника</h3>
-    <form enctype="multipart/form-data" method="POST">
+    <form enctype="multipart/form-data" method="GET">
       <fieldset>
         <div class="pure-control-group">
                 <label for="fio">Фио</label>
