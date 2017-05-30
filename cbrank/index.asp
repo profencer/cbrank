@@ -516,7 +516,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp = rsGrates("employee").Value
                 grate.Add "emp", emp
                 If Len(rsGrates("date") & "") > 0 Then
-                    set date = rsGrates("date").Value
+                    'set date = rsGrates("date").Value FIX THIS SHIT
                 end if
                 grate.Add "date", date
                 val = rsGrates("value").Value
