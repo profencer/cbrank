@@ -534,7 +534,14 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
             conn.close()
             dim a
             dim s
-            
+            dim values
+            Set values = Server.CreateObject("Scripting.Dictionary")
+            values.add "1", "Служение обществу"
+            values.add "2", "Профессионализм"
+            values.add "3", "Честность"
+            values.add "4", "Уважение и сотрудничество"
+            values.add "5", "Ответственность за результат"
+               
            
             %>
                     Раскрываем ценности Банка России каждый день!
@@ -673,7 +680,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=posts.Item(CInt(emps.Item(grates(e).Item("emp")).Item("post")))%> <%%></p>
-                <p><b><%=grates(e).Item("value")%></b></p>
+                <p><b><%=values.Item(grates(e).Item("value"))%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
                 <button class="modal__close jsModalClose">&#10005;</button>
