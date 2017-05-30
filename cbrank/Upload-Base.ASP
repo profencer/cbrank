@@ -53,7 +53,7 @@ End If'Form.State = 0 then
       <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This sample demonstrates shortes possible server-side code.
 			ASP code specifies only Form.SizeLimit (maximum size of upload), Server.ScriptTimeout (maximum time to do upload) and DestinationPath (folder to store uploaded files).
 
-<br>Upload timeout is <%=Server.ScriptTimeout%>s
+<br>ЗАГРЗААА <%=Server.ScriptTimeout%>s
 <br>Form size limit is <%=Form.SizeLimit \ 1024 %>kB
 <br>Destination folder is <%=DestinationPath%>
 
@@ -82,7 +82,7 @@ End If'Form.State = 0 then
 
 <HR COLOR=silver Size=1>
 <CENTER>
-<FONT SIZE=1>� 1996 � <%=year(date)%> Antonin Foller, <a href="http://www.motobit.com">Motobit Software</a>, e-mail <A href="mailto:help@pstruh.cz" >help@pstruh.cz</A>
+<FONT SIZE=1>� 1996 � <%=year(date)%> Antonin Foller, <a href="http://www.motobit.com">Motobit Software</a>, e-mail <A href="mailto:help@pstruh.cz" >help@pstruh.cz</A>
 <br>To monitor current running uploads/downloads, see <A Href="http://www.motobit.com/help/iistrace/iis-monitor.asp">IISTracer - IIS real-time monitor</A>.
 </FONT>
 
