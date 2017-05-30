@@ -82,6 +82,7 @@ rsDeps.close()
     response.write(Uploader.Form("d"))
     response.write(Uploader.Form("p"))
     response.write(File.FileName)
+    @ codepage=65001 
     Set rs = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
@@ -89,7 +90,7 @@ rsDeps.close()
     sql=sql & "('" & Uploader.Form("fio") & "',"
     sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
     sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
-    sql=sql & "'" & Encode_UTF8(File.FileName)& "')"
+    sql=sql & "'" & File.FileName & "')"
     'on error resume next
     conn.Execute sql
     'if err<>0 then
