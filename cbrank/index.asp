@@ -536,11 +536,11 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
             dim s
             dim values
             Set values = Server.CreateObject("Scripting.Dictionary")
-            values.add "1", "Служение обществу"
-            values.add "2", "Профессионализм"
-            values.add "3", "Честность"
-            values.add "4", "Уважение и сотрудничество"
-            values.add "5", "Ответственность за результат"
+            values.add 1, "Служение обществу"
+            values.add 2, "Профессионализм"
+            values.add 3, "Честность"
+            values.add 4, "Уважение и сотрудничество"
+            values.add 5, "Ответственность за результат"
                
            
             %>
