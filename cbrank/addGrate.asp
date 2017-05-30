@@ -18,7 +18,7 @@ conn.Execute sql,recaffected
 if err<>0 then
   Response.Write(err.Description)
 else
-  Response.Write("<h3>" & recaffected & " record added</h3>")
+  Response.Write("<h3>" Запись добавлена!</h3> <a href='index.asp'>Назад</a>")
 end if
 conn.close
 %>
