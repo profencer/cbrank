@@ -15,7 +15,7 @@ sql=sql & "'" & Request.QueryString("cb") & "')"
 on error resume next
 conn.Execute sql,recaffected
 if err<>0 then
-  Response.Write(err)
+  Response.Write(err.Description)
 else
   Response.Write("<h3>" & recaffected & " record added</h3>")
 end if
