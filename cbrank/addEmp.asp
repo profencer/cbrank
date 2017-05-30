@@ -82,7 +82,7 @@ rsDeps.close()
 
 conn.close
 
-  Dim Uploader, File
+  Dim Uploader, File,sql
   Set Uploader = New FileUploader
 
   ' This starts the upload process
