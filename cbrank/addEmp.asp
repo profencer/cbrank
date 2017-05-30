@@ -62,7 +62,7 @@ conn.close
 
   ' This starts the upload process
   Uploader.Upload()
-  Session.CodePage = 65001
+  
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
   Else
@@ -72,6 +72,7 @@ conn.close
   Next
 	Response.Write "File Uploaded: " & File.FileName & "<br>"
   end if
+  Session.CodePage = 65001
 %>
 <html>
     <head>
