@@ -1,6 +1,6 @@
 
 <%Option Explicit%>
-<% Response.Charset= "utf-8"%>
+<% Response.Charset= "windows-1251"%>
 <!-- #include file="upload.asp" -->
 <%
   Function Encode_UTF8(astr) 
@@ -112,7 +112,7 @@ response.write(request.form("fio"))
 %>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="windows-1251">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
   <body>
@@ -129,7 +129,7 @@ response.write(request.form("fio"))
                     <% 
                     Dim d
                     For Each d In deps %>
-                        <option value="<%=d%>"><%=Encode_UTF8(deps(d)) %></option>
+                        <option value="<%=d%>"><%=deps(d) %></option>
                     <% Next %>
                 </select>
         </div>
@@ -139,7 +139,7 @@ response.write(request.form("fio"))
                     <% 
                     Dim p
                     For Each p In posts %>
-                        <option value="<%=p%>"><%=Encode_UTF8(posts(p)) %></option>
+                        <option value="<%=p%>"><%=posts(p) %></option>
                     <% Next %>
                 </select>
         </div>
