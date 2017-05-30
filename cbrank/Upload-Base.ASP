@@ -67,7 +67,7 @@ Do While not rsDeps.EOF
 Loop
 rsDeps.close()
 
-response.write(request.from("fio"))
+
 
 %>  
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
