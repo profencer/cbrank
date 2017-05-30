@@ -535,10 +535,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
             dim a
             dim s
             
-            for each e in posts
-                Response.Write(posts(e))
-            next
-            
+           
             %>
                     Раскрываем ценности Банка России каждый день!
                  </div>
@@ -559,7 +556,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
                     
                         <%
                             dim num
-                            num = GrateCount - (rows - i)*cols + j - 1
+                            num = GrateCount - (rows - i)*cols + j
                             dim r
                             r = grates.Items
 
