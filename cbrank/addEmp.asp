@@ -4,7 +4,7 @@
 <!-- #include file="upload.asp" -->
 <%
   Function Encode_UTF8(astr) 
-
+dim utftext,c
 utftext = "" 
 
 For n = 1 To Len(astr) 
