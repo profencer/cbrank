@@ -2,7 +2,7 @@
 Dim Connection
 Set conn = Server.CreateObject("ADODB.Connection")
 'добавить пользователей приложения в писателей и изменятелей файла бд
-conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
+conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.mdb")
 Set rs = Server.CreateObject("ADODB.Recordset")
 sql="INSERT INTO grates ([id],[employee],[date],"
 sql=sql & "[value],[desc])"

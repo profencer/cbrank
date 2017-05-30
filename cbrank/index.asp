@@ -428,7 +428,7 @@ end function
                      Dim Connection
 Set conn = Server.CreateObject("ADODB.Connection")
 
-conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.mdb")
+conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.mdb")
             Dim deps
             Set deps=Server.CreateObject("Scripting.Dictionary")
             Set rsDeps = Server.CreateObject("ADODB.Recordset")
