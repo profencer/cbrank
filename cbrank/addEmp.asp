@@ -68,30 +68,39 @@ if request.Form("fio") Then
   end if
 end if
 %>
- <h3>Добавить сотрудника</h3>
-<form action="addEmp.asp" method="POST">
-  <fieldset>
-    <div class="pure-control-group">
-            <label for="fio">Фио</label>
-            <input name="fio" id="fio" type="text"/>
-    </div>
-    <div class="pure-control-group">
-            <label for="e">Подразделение</label>
-            <select name="e" id="e">
-                <% 
-                For Each d In deps %>
-                    <option value="<%=d%>"><%=emps.Item(d) %></option>
-                <% Next %>
-            </select>
-    </div>
-    <div class="pure-control-group">
-            <label for="e">Должность</label>
-            <select name="e" id="e">
-                <% 
-                For Each p In posts %>
-                    <option value="<%=p%>"><%=posts.Item(p) %></option>
-                <% Next %>
-            </select>
-    </div>
-  </fieldset>
-</form>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+  <body>
+    <h3>Добавить сотрудника</h3>
+    <form action="addEmp.asp" method="POST">
+      <fieldset>
+        <div class="pure-control-group">
+                <label for="fio">Фио</label>
+                <input name="fio" id="fio" type="text"/>
+        </div>
+        <div class="pure-control-group">
+                <label for="e">Подразделение</label>
+                <select name="e" id="e">
+                    <% 
+                    For Each d In deps %>
+                        <option value="<%=d%>"><%=emps.Item(d) %></option>
+                    <% Next %>
+                </select>
+        </div>
+        <div class="pure-control-group">
+                <label for="e">Должность</label>
+                <select name="e" id="e">
+                    <% 
+                    For Each p In posts %>
+                        <option value="<%=p%>"><%=posts.Item(p) %></option>
+                    <% Next %>
+                </select>
+        </div>
+        <input type="submit" value="Отправить">
+      </fieldset>
+    </form>
+  </body>
+</html>
