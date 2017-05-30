@@ -60,7 +60,7 @@ rsDeps.close()
 
 
 
-<h3>Добавить сотрудника</h3>
+<h3>Добавить сотрудника c фото <%=Session("path")%></h3>
     <form method="post">
       <fieldset>
         <div class="pure-control-group">
