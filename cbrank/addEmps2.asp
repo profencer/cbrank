@@ -55,7 +55,7 @@ if request.Form("fio") <> "" Then
       Response.Write(err.Description)
     else
       Session("path") = ""
-      res = "<h3> Пользователь создан!</h3>
+      res = " Пользователь создан!"
     end if
 end if
 %>  
