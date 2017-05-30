@@ -1,5 +1,7 @@
 <%@ Language=VBScript %>
 <%Option Explicit%>
+<% @ codepage=65001 %>
+<% Response.Charset= "utf-8"%>
 <!-- #include file="upload.asp" -->
 <%
 Dim conn,rs,sql
