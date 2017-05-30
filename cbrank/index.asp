@@ -669,10 +669,10 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
                 <div class="avatar">
-                            <img   class="icon icons8-Thumb-Up" src="http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg">
+                            <img   class="icon icons8-Thumb-Up" src="/images/<%=emps.Item(grates(e).Item("emp")).Item("pic")%><!--http://www.newsbiscuit.com/wp-content/uploads/2011/03/362-hester.jpg->>">
                 </div>
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
-                <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=posts(1)%><%=posts.Item(CInt(emps.Item(grates(e).Item("emp")).Item("post")))%> <%%></p>
+                <p style="font-size:12px; font-weight:bold;" id="date">Должность:<%=posts.Item(CInt(emps.Item(grates(e).Item("emp")).Item("post")))%> <%%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
@@ -686,28 +686,31 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             <div class="modal__overlay jsOverlay"></div>
             <div class="modal__container">
                 <h2>Отправить благодарность!</h2>
-                <form class="pure-form pure-form-aligned">
+                <form class="pure-form pure-form-aligned" action="addGrate.asp" method="GET">
     <fieldset>
         
         <div class="pure-control-group">
             <label for="e">Сотрудник</label>
-            <select id="e">
+            <select name="e" id="e">
                 <% 
                 For Each e In emps %>
-                    <option><%=emps.Item(e).Item("fname") %></option>
+                    <option value="<%=e%>"><%=emps.Item(e).Item("fname") %></option>
                 <% Next %>
                             </select>
         </div>
         <div class="pure-control-group">
             <label for="d">Дата</label>
-            <input id="d" type="date"/>
+            <input name="date" id="d" type="date"/>
         </div>
          <div class="pure-control-group">
             <label for="v">Ценность</label>
-            <select id="v">
-                <option>Служение обществу</option>
-                <option>Профессионализм</option>
-                <option>...</option>
+            <select name="v" id="v">
+                <option value="1">Служение обществу</option>
+                <option value="2">Профессионализм</option>
+                <option value="3">Честность</option>
+                <option value="4">Уважение и сотрудничество</option>
+                <option value="5">Ответственность за результат</option>
+                <option></option>
             </select>
         </div>
 
@@ -716,7 +719,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Текст благодарности
             </label>
             <br/>
-            <textarea id="cb"> </textarea>
+            <textarea name="cb" id="cb"> </textarea>
             <br/>
             <button type="submit" class="pure-button pure-button-primary">Отправить</button>
         </div>
