@@ -65,6 +65,7 @@ if request.Form("fio") Then
     File.SaveToDisk "C:\cb\cbrank\cbrank\"
   Next
 	Response.Write "File Uploaded: " & File.FileName & "<br>"
+  end if
 end if
 %>
  <h3>Добавить сотрудника</h3>
