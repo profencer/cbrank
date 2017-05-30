@@ -21,7 +21,9 @@ If Form.State = 0 Then 'Completted
 	Form.Files.Save DestinationPath 
   response.write(Form("fio"))
 	response.write "<br><Font Color=green>Files (" & Form.TotalBytes \1024 & "kB) was saved to " & DestinationPath & " folder.</Font>"
-  Session("path") = Form.Files(0).FileName
+  For Each File In Form.Files.Items
+   Session("path") = File.Filename
+  Next
   response.redirect "addEmps2.asp"
   
 ElseIf Form.State > 10 then
