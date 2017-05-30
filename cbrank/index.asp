@@ -471,6 +471,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             dim fname 
             dim dep
             dim pic
+            dim post
             Do While not rsEmps.EOF 
                 
                 
@@ -483,6 +484,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 dep = rsEmps.Fields.Item("department").Value
                 emp.Add "department", dep
                 
+                post = rsEmps.Fields.Item("post").Value
+                emp.Add "post", post
                 
                 pic = rsEmps.Fields.Item("pic").Value
                 emp.Add "pic", pic 
