@@ -450,6 +450,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
             
 
             Dim posts
+            Dim postid
             Set posts = Server.CreateObject("Scripting.Dictionary")
             Set rsPosts = Server.CreateObject("ADODB.Recordset")
             rsPosts.Open "SELECT * FROM posts", conn	
@@ -457,8 +458,8 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 
                 desc = rsPosts("desc").Value
                 
-                id = rsPosts("id").Value
-                posts.Add id ,desc 
+                postid = rsPosts("id").Value
+                posts.Add postid ,desc 
                 rsPosts.MoveNext 
             Loop
             rsPosts.close()
@@ -673,7 +674,9 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 <p style="font-size:12px; font-weight:bold;" id="fio"><%=emps.Item(grates(e).Item("emp")).Item("fname")%></p>
                 <p style="font-size:12px; font-weight:bold;" id="date">Должность: <%
                 Dim postid
-                postid = emps.Item(grates(e).Item("emp")).Item("post")
+                Dim empid
+                empid = grates(e).Item("emp")
+                postid = emps.Item().Item("post")
                 console.write(postid)
                 console.write(posts.Item(postid))%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
