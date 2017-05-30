@@ -95,9 +95,12 @@ conn.close
   Else
 	' Loop through the uploaded files
 	For Each File In Uploader.Files.Items
+    response.write(Request.Form("fio"))
     File.SaveToDisk "C:\cb\cbrank\cbrank\"
+    Response.Write "Загружен файл: " & File.FileName & "<br>"
+
   Next
-	Response.Write "File Uploaded: " & File.FileName & "<br>"
+	
   end if
   
 %>
