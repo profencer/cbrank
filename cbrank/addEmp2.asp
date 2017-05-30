@@ -1,5 +1,5 @@
 
-<%Option Explicit%>
+<%Option Explicit @CHARSET="65001"%>
 <% Response.Charset= "utf-8"%>
 <!--#INCLUDE FILE="clsUpload.asp"-->
 <%
