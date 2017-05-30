@@ -58,6 +58,11 @@ rsDeps.close()
 conn.close
 
 if request.Form("fio") <> "" Then
+  Dim Uploader, File
+  Set Uploader = New FileUploader
+
+  ' This starts the upload process
+  Uploader.Upload()
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
   Else
