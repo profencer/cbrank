@@ -86,7 +86,7 @@ rsDeps.close()
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
     sql=sql & " VALUES "
-    sql=sql & "('" & Encode_UTF8(Uploader.Form("fio")) & "',"
+    sql=sql & "('" & Uploader.Form("fio") & "',"
     sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
     sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
     sql=sql & "'" & Encode_UTF8(File.FileName)& "')"
