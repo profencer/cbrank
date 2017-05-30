@@ -87,7 +87,7 @@ end if
                     <% 
                     Dim d
                     For Each d In deps %>
-                        <option value="<%=d%>"><%=emps.Item(d) %></option>
+                        <option value="<%=d%>"><%=deps(d) %></option>
                     <% Next %>
                 </select>
         </div>
@@ -97,7 +97,7 @@ end if
                     <% 
                     Dim p
                     For Each p In posts %>
-                        <option value="<%=p%>"><%=posts.Item(p) %></option>
+                        <option value="<%=p%>"><%=posts(p) %></option>
                     <% Next %>
                 </select>
         </div>
