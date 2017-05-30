@@ -40,14 +40,14 @@ Do While not rsDeps.EOF
 Loop
 rsDeps.close()
 Dim rs,sql
-Set rs = Server.CreateObject("ADODB.Recordset")
+Set = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
     sql=sql & " VALUES "
-    sql=sql & "('" & Uploader.Form("fio") & "',"
-    sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
-    sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
-    sql=sql & "'" & File.FileName & "')"
+    sql=sql & "('" & request.Form("fio") & "',"
+    sql=sql & "'" & CInt(request.Form("d")) & "',"
+    sql=sql & "'" & CInt(request.Form("p")) & "',"
+    sql=sql & "'" & request.Form("pic") & "')"
     on error resume next
     conn.Execute sql
     if err<>0 then
@@ -77,7 +77,7 @@ Set rs = Server.CreateObject("ADODB.Recordset")
 <h3>Добавить сотрудника c фото <%=Session("path")%></h3>
     <form method="post">
       <fieldset>
-        <input type="text" style="display:hidden" value="<%=Session("path")%>">
+        <input type="text" style="display:hidden" name="pic" value="<%=Session("path")%>">
         <div class="pure-control-group">
                 <label for="fio">Фио</label>
                 <textarea name="fio" id="fio" /></textarea>
