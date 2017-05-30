@@ -19,6 +19,7 @@ Form.SizeLimit = &H100000
 
 If Form.State = 0 Then 'Completted
 	Form.Files.Save DestinationPath 
+  response.write(Form("fio"))
 	response.write "<br><Font Color=green>Files (" & Form.TotalBytes \1024 & "kB) was saved to " & DestinationPath & " folder.</Font>"
 ElseIf Form.State > 10 then
   Const fsSizeLimit = &HD
