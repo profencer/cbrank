@@ -498,9 +498,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
                 'end if
                 rsEmps.MoveNext 
             Loop
-            For Each e In emps 
-                'response.write(emps.Item(e).Item("fname"))
-            Next
+           
             rsEmps.close()
             Dim grates
             Set grates=Server.CreateObject("Scripting.Dictionary")
@@ -524,8 +522,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db2.
                 desc = rsGrates("desc").Value
                 grate.Add "desc", desc 
                 id = rsGrates("id").Value
-                response.write(id)
-                response.write(",")
+                
                 grates.Add id ,grate 
                 GrateCount = GrateCount + 1
                 rsGrates.MoveNext

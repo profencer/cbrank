@@ -1,3 +1,4 @@
+<%@CODEPAGE=65001%>
 <%
 Dim Connection,xs
 Set conn = Server.CreateObject("ADODB.Connection")
