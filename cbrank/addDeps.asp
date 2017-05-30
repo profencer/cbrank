@@ -72,12 +72,11 @@ end if
 
 
 
-<h3>Добавить сотрудника c фото <%=Session("path")%></h3>
+<h3>Добавить должность%></h3>
     <form method="post">
       <fieldset>
-        <input type="text" style="display:hidden" name="pic" value="<%=Session("path")%>">
-        <div class="pure-control-group">
-                <label for="fio">Фио</label>
+         <div class="pure-control-group">
+                <label for="fio">Yfpdfybt</label>
                 <textarea name="fio" id="fio" /></textarea>
         </div>
         

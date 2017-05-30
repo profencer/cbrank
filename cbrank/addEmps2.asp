@@ -53,6 +53,7 @@ if request.Form("fio") <> "" Then
     if err<>0 then
       Response.Write(err.Description)
     else
+      Session("path") = ""
       Response.Write("<h3> Пользователь создан!</h3> ")
     end if
 end if
@@ -77,7 +78,7 @@ end if
 <h3>Добавить сотрудника c фото <%=Session("path")%></h3>
     <form method="post">
       <fieldset>
-        <input type="text" style="display:hidden" name="pic" value="<%=Session("path")%>">
+        <input type="text" style="display:none" name="pic" value="<%=Session("path")%>">
         <div class="pure-control-group">
                 <label for="fio">Фио</label>
                 <textarea name="fio" id="fio" /></textarea>
