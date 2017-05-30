@@ -12,5 +12,12 @@ sql=sql & "'" & Request.QueryString("d") & "',"
 sql=sql & "'" & Request.QueryString("v") & "',"
 sql=sql & "'" & Request.QueryString("cb") & "')"
 'добавить сендера 
-
+on error resume next
+conn.Execute sql,recaffected
+if err<>0 then
+  Response.Write("No update permissions!")
+else
+  Response.Write("<h3>" & recaffected & " record added</h3>")
+end if
+conn.close
 %>
