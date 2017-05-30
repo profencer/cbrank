@@ -57,7 +57,7 @@ rsDeps.close()
 
 conn.close
 
-if request.Form("fio") Then
+if request.Form("fio") <> "" Then
   If Uploader.Files.Count = 0 Then
 	Response.Write "File(s) not uploaded."
   Else
