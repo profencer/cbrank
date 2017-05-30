@@ -1,7 +1,7 @@
 
 <%Option Explicit%>
 <% Response.Charset= "utf-8"%>
-<!-- #include file="upload.asp" -->
+<!--#INCLUDE FILE="clsUpload.asp"-->
 <%
   Function Encode_UTF8(astr) 
 dim utftext,c,n
@@ -67,30 +67,32 @@ rsDeps.close()
 
 
 
-  Dim Uploader, File
-  Set Uploader = New FileUploader
+Dim objUpload
+Dim strFileName
+Dim strPath
 
-  ' This starts the upload process
-  Uploader.Upload()
-  
-  If Uploader.Files.Count = 0 Then
-	Response.Write "File(s) not uploaded."
-  Else
-	' Loop through the uploaded files
-	For Each File In Uploader.Files.Items
-    response.write(Uploader.Form("fio"))
-    response.write(Uploader.Form("d"))
-    response.write(Uploader.Form("p"))
-    response.write(File.FileName)
-    
+' Instantiate Upload Class
+Set objUpload = New clsUpload
+
+' Grab the file name
+strFileName = objUpload.Fields("file").FileName
+
+' Compile path to save file to
+strPath = Server.MapPath("Uploads") & "\" & strFileName
+
+' Save the binary data to the file system
+objUpload("file").SaveAs strPath
+
+' Release upload object from memory
+Set objUpload = Nothing
     Set rs = Server.CreateObject("ADODB.Recordset")
     sql="INSERT INTO employees ([fullname],[department],"
     sql=sql & "[post],[pic])"
     sql=sql & " VALUES "
-    sql=sql & "('" & Uploader.Form("fio") & "',"
-    sql=sql & "'" & CInt(Uploader.Form("d")) & "',"
-    sql=sql & "'" & CInt(Uploader.Form("p")) & "',"
-    sql=sql & "'" & File.FileName & "')"
+    sql=sql & "('" & objUpload.Fields("fio") & "',"
+    sql=sql & "'" & CInt(objUpload.Fields("d")) & "',"
+    sql=sql & "'" & CInt(objUpload.Fields("p")) & "',"
+    sql=sql & "'" & strFileName & "')"
     'on error resume next
     conn.Execute sql
     'if err<>0 then
@@ -98,13 +100,6 @@ rsDeps.close()
     'else
     '  Response.Write("<h3> Пользователь создан!</h3> ")
     'end if
-    File.SaveToDisk "C:\cb\cbrank\cbrank\"
-    Response.Write "Загружен файл: " & File.FileName & "<br>"
-
-  Next
-	
-  end if
-  
 %>
 <html>
     <head>
