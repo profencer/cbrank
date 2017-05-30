@@ -675,7 +675,7 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 Dim postid
                 postid = emps.Item(grates(e).Item("emp")).Item("post")
                 console.write(postid)
-                console.write(posts.Item(postid)%></p>
+                console.write(posts.Item(postid))%></p>
                 <p><b><%=grates(e).Item("value")%></b></p>
                 <p align="justify"><%=grates(e).Item("desc")%>
                 </p>
