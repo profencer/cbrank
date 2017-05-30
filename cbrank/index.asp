@@ -516,13 +516,15 @@ conn.Open"Provider=Microsoft.Jet.OLEDB.4.0;Data source ="&Server.MapPath("./db.m
                 emp = rsGrates("employee").Value
                 grate.Add "emp", emp
 
-                set date = rsGrates("date")
+                set date = rsGrates("date").Value
                 grate.Add "date", date
-                val = rsGrates("value")
+                val = rsGrates("value").Value
                 grate.Add "value", val 
-                desc = rsGrates("desc")
+                desc = rsGrates("desc").Value
                 grate.Add "desc", desc 
                 id = rsGrates("id").Value
+                console.write(id)
+                console.write(" ")
                 grates.Add id ,grate 
                 GrateCount = GrateCount + 1
                 rsGrates.MoveNext
